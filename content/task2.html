@@ -143,8 +143,61 @@ img.add_border {
           
         </header>
     <div id="tipue_search_content">list << <a href='list.html'>Previous</a> <a href='task3.html'>Next</a> >> task3<br /><h1>task2</h1>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from browser import html, document, ajax  # 從 Brython 的 browser 模組匯入 html、document 和 ajax，用來操作網頁和發送請求
+
+url = "https://mde.tw/list/2b.txt"  # 存放學生清單的純文字檔案網址
+
+# G7 組員的學號集合，用 set 儲存，方便快速查詢是否為組員
+g7_members = {"41023114", "41223218", "41223230", "41223247", "41223250", "41223240"}
+
+# 定義當 AJAX 請求完成後要執行的函式
+def on_complete(req):
+    if req.status == 200:  # 如果伺服器回應狀態碼是 200（表示成功）
+        data = req.text.splitlines()  # 將收到的純文字內容按行分割成列表
+        all_stud = data[1:]  # 跳過第一行標題，取得所有學生資料
+
+        # 建立一個無序清單 (UL) HTML 元素，用來放組員資料
+        stud_list = html.UL()
+
+        # 遍歷每一筆學生資料
+        for stud in all_stud:
+            fields = stud.split()  # 將每一行用空白切割，預期會得到 [學號, 帳號]
+            if len(fields) &gt;= 2:  # 確保至少有學號和帳號兩欄
+                stud_id, account = fields[:2]  # 取得學號和帳號
+
+                # 如果這位學生是 G7 組員
+                if stud_id in g7_members:
+                    link = f"https://mdecd2025.github.io/hw-{stud_id}"  # 組合作業連結（對應 GitHub Pages）
+                    
+                    # 建立一個清單項目 (LI)，顯示帳號和超連結
+                    stud_list &lt;= html.LI([
+                        f"{account} - ",  # 顯示帳號
+                        html.A(link, href=link, target="_blank")  # 加入一個可點擊的超連結，另開新分頁
+                    ])
+
+        # 把資訊插入到 HTML 中 id 為 brython_div1 的區塊
+        document["brython_div1"] &lt;= html.P(f"G7 組員 ({len(g7_members)} 名)：")  # 顯示組員總數
+        document["brython_div1"] &lt;= stud_list  # 顯示組員清單
+
+    else:
+        # 如果 AJAX 請求失敗（非 200 回應），顯示錯誤訊息
+        document["brython_div1"] &lt;= html.P("無法取得資料")
+
+# 使用 ajax.get 送出 GET 請求，完成後呼叫 on_complete 函式
+ajax.get(url, oncomplete=on_complete)
+</pre>
 <p><a href="https://mdecd2025.github.io/hw-41223230/content/Brython.html?src=https://gist.githubusercontent.com/41223230/08a46cfd39bc94e2db5e3f6fd4def3da/raw/ad282570926b80d4247b77ba5c9b50fc0d6f6e10/g7*list">G7執行結果</a></p>
-<br />list << <a href='list.html'>Previous</a> <a href='task3.html'>Next</a> >> task3</div>
+<p>小組成員名單</p>
+<ul>
+<li>41023114 -<span> </span><a href="https://mdecd2025.github.io/hw-41023114" target="_blank">https://mdecd2025.github.io/hw-41023114</a></li>
+<li>41223218 -<span> </span><a href="https://mdecd2025.github.io/hw-41223218" target="_blank">https://mdecd2025.github.io/hw-41223218</a></li>
+<li>41223230 -<span> </span><a href="https://mdecd2025.github.io/hw-41223230" target="_blank">https://mdecd2025.github.io/hw-41223230</a></li>
+<li>ych0227 -<span> </span><a href="https://mdecd2025.github.io/hw-41223240" target="_blank">https://mdecd2025.github.io/hw-41223240</a></li>
+<li>CYC41223247 -<span> </span><a href="https://mdecd2025.github.io/hw-41223247" target="_blank">https://mdecd2025.github.io/hw-41223247</a></li>
+<li>timluo123 -<span> </span><a href="https://mdecd2025.github.io/hw-41223250" target="_blank">https://mdecd2025.github.io/hw-41223250</a></li>
+</ul>
+<p></p>
+<p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/2pGRGViRHXI" width="560"></iframe></p><br />list << <a href='list.html'>Previous</a> <a href='task3.html'>Next</a> >> task3</div>
         
     <!-- footer -->
       <div class="container">
