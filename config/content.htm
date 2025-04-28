@@ -286,7 +286,34 @@ ajax.get(url, oncomplete=on_complete)
 <p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/Ew6fuEFF3K4" width="560"></iframe></p>
 <p></p>
 <p><a href="/downloads/fourbar.7z">webots fourbar.7z</a></p>
-<p></p>
+<p><a href="/downloads/fourbar_controller.7z">fourbar_controller.7z</a></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from controller import Robot  # 從 Webots 控制器模組匯入 Robot 類別
+
+def run_robot():
+    # 建立 Robot 實例
+    robot = Robot()
+
+    # 獲取模擬的基本時間步長 (單位：毫秒)
+    timestep = int(robot.getBasicTimeStep())
+
+    # 取得名為 'motor' 的馬達裝置
+    motor = robot.getDevice('motor')
+
+    # 設定馬達為無限旋轉模式（連續轉動，不是轉到特定角度）
+    motor.setPosition(float('inf'))
+
+    # 設定馬達旋轉速度為 1.0 弧度/秒
+    motor.setVelocity(1.0)
+
+    # 主控制迴圈：只要模擬沒結束，就一直執行
+    while robot.step(timestep) != -1:
+        pass  # 目前不需要在每個時間步做額外的動作
+
+# 如果此檔案是直接執行的，呼叫 run_robot() 函式
+if __name__ == "__main__":
+    run_robot()
+</pre>
+<p><br/><br/></p>
 <p>HW1 (5%): <span style="background-color: #ffff00;">建立由 Box 組成的平面四連桿機構 Webots 模擬場景</span></p>
 <p>操作影片標題: 國立虎尾科技大學 - 機械設計工程系 - cd2025 HW1 - 學員學號</p>
 <p></p><h2>HW2</h2>
