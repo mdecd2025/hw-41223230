@@ -326,10 +326,43 @@ if __name__ == "__main__":
 <p>HW2 (5%): <span style="background-color: #ffff00;">建立由 CAD 繪製零件組成的平面四連桿機構 Webots 模擬場景</span></p>
 <p>操作影片標題: 國立虎尾科技大學 - 機械設計工程系 - cd2025 HW2 - 學員學號</p>
 <p></p><h2>HW3</h2>
+<p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/2FHkLTmIFPo" width="560"></iframe></p>
+<p></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># 從 Webots 的 controller 模組中導入 Robot 類別
+from controller import Robot
+
+# 定義主函式
+def run_robot():
+    # 建立一個 Robot 實例，用來與模擬中的機器人互動
+    robot = Robot()
+
+    # 取得模擬的基本時間步長（以毫秒為單位）
+    timestep = int(robot.getBasicTimeStep())
+
+    # 取得名為 'motor1' 的馬達裝置
+    motor = robot.getDevice('motor1')
+
+    # 取得鍵盤裝置，並啟用以便後續讀取輸入
+    keyboard = robot.getKeyboard()
+    keyboard.enable(timestep)  # 啟用鍵盤裝置，並設定掃描間隔為 timestep
+
+    # 設定馬達的初始位置（此處未實際使用，但可作為預設值）
+    initial_position = 0.0  # 假設初始位置為 0 弧度
+
+    # 主要控制迴圈，每次迴圈會根據 timestep 推進模擬
+    while robot.step(timestep) != -1:
+        # 將馬達的位置設定為 38 度（轉換為弧度後設為目標位置）
+        motor.setPosition(38 * 3.14159 / 180)
+
+# 如果這個程式是主程式執行，則呼叫主函式
+if __name__ == "__main__":
+    run_robot()
+</pre>
+<p></p>
+<p></p>
 <p>HW3 (20%):<span style="background-color: #ffff00;">建立 Webots 桌上籃球遊戲機模擬系統</span></p>
 <p>操作影片標題: 國立虎尾科技大學 - 機械設計工程系 - cd2025 HW3 - 學員學號</p>
-<p></p>
-<h1>Midterm</h1>
+<p></p><h1>Midterm</h1>
 <p>各週進度:<span>可攜更改python 313、學員名單、小組名單、四連桿繪製組裝</span></p>
 <p>各週網頁內容:<a href="https://mdecd2025.github.io/hw-41223230/content/task1.html">task1</a>、<a href="https://mdecd2025.github.io/hw-41223230/content/list.html">task1 list</a>、<a href="https://mdecd2025.github.io/hw-41223230/content/task2.html">task2</a>、<a href="https://mdecd2025.github.io/hw-41223230/content/task4.html">task4</a></p>
 <p>期中心得:上完九週的課程，個人覺得這門課比上一門課困難許多，而且目前作業進度落後，需要多加跟上。</p>
