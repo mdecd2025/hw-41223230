@@ -288,6 +288,18 @@ ajax.get(url, oncomplete=on_complete)
 <p></p>
 <p><a href="/downloads/HW1.7z">fourbar webots.7z</a></p>
 <p>操作流程</p>
+<p class="cvGsUA direction-ltr align-start para-style-body"><span class="OYPEnA font-feature-liga-off font-feature-clig-off font-feature-calt-off text-decoration-none text-strikethrough-none">一開始先建一個 robot，然後在它的 children 裡加兩個 hinge joint 跟一個 solid。</span></p>
+<p class="cvGsUA direction-ltr align-start para-style-body"><span class="OYPEnA font-feature-liga-off font-feature-clig-off font-feature-calt-off text-decoration-none text-strikethrough-none">solid 的部分我會把它改名叫做 base，然後在它的 children 裡右鍵新增一個 shape，進到 geometry 裡右鍵新增一個 box，然後把 X 的尺寸設成 1 公尺。</span></p>
+<p class="cvGsUA direction-ltr align-start para-style-body"><span class="OYPEnA font-feature-liga-off font-feature-clig-off font-feature-calt-off text-decoration-none text-strikethrough-none">（之後就不再重複說明怎麼加 box 的步驟了。）</span></p>
+<p class="cvGsUA direction-ltr align-start para-style-body"><span class="OYPEnA font-feature-liga-off font-feature-clig-off font-feature-calt-off text-decoration-none text-strikethrough-none">接著從兩個 hinge joint 任選一個，把它改名成 hinge joint1，另一個就叫 hinge joint4。</span></p>
+<p class="cvGsUA direction-ltr align-start para-style-body"><span class="OYPEnA font-feature-liga-off font-feature-clig-off font-feature-calt-off text-decoration-none text-strikethrough-none">接下來點進 hinge joint1，在它的主線程下面，找到 endpoint，右鍵新增一個 solid，然後調整一下它的數值。rotation 的部分可以自己設定，當作是初始角度。</span></p>
+<p class="cvGsUA direction-ltr align-start para-style-body"><span class="OYPEnA font-feature-liga-off font-feature-clig-off font-feature-calt-off text-decoration-none text-strikethrough-none">在這個 solid 的 children 裡面，再加一個 pose 跟一個 hinge joint，然後把這個 hinge joint 命名為 joint2。</span></p>
+<p class="cvGsUA direction-ltr align-start para-style-body"><span class="OYPEnA font-feature-liga-off font-feature-clig-off font-feature-calt-off text-decoration-none text-strikethrough-none">然後 joint2 的處理方式跟剛剛 joint1 一樣：在 children 裡面新增一個 solid，接著加 pose（放在 box 的中心位置），再加一個 hinge joint，把它命名為 joint3，然後建立第三個 box。</span></p>
+<p class="cvGsUA direction-ltr align-start para-style-body"><span class="OYPEnA font-feature-liga-off font-feature-clig-off font-feature-calt-off text-decoration-none text-strikethrough-none">這樣 box 的結構就完成了，接下來要來設定 jointParameters。</span></p>
+<p class="cvGsUA direction-ltr align-start para-style-body"><span class="OYPEnA font-feature-liga-off font-feature-clig-off font-feature-calt-off text-decoration-none text-strikethrough-none">jointParameters 的重點是在設定關節相對於原點（0,0,0）的座標位置。舉例來說，如果 link1 的座標相對於原點是往負 X 移動 0.5 公尺，那 anchor 的 X 值就要設成 -0.5m。link2 跟 link3 的設法也是一樣的邏輯。</span></p>
+<p class="cvGsUA direction-ltr align-start para-style-body"><span class="OYPEnA font-feature-liga-off font-feature-clig-off font-feature-calt-off text-decoration-none text-strikethrough-none">然後在 joint1 上加一個旋轉馬達，命名為 motor（這會用在後面的控制程式裡）。</span></p>
+<p class="cvGsUA direction-ltr align-start para-style-body"><span class="OYPEnA font-feature-liga-off font-feature-clig-off font-feature-calt-off text-decoration-none text-strikethrough-none">最後一個步驟是幫 link1、link2、link3 建立 boundingObject，這個是用來定義物體的物理碰撞範圍的。</span></p>
+<p></p>
 <p><img alt="" height="106" src="/images/螢幕擷取畫面 2025-06-03 091421.png" width="221"/></p>
 <p><img alt="" height="271" src="/images/螢幕擷取畫面 2025-06-03 091502.png" width="493"/></p>
 <p><img alt="" height="252" src="/images/螢幕擷取畫面 2025-06-03 092004.png" width="571"/></p>
@@ -333,8 +345,7 @@ if __name__ == "__main__":
 <p><br/><br/></p>
 <p>HW1 (5%): <span style="background-color: #ffff00;">建立由 Box 組成的平面四連桿機構 Webots 模擬場景</span></p>
 <p>操作影片標題: 國立虎尾科技大學 - 機械設計工程系 - cd2025 HW1 - 學員學號</p>
-<p></p>
-<h2>HW2</h2>
+<p></p><h2>HW2</h2>
 <p>繪製檔案轉obj</p>
 <p>檔案：<a href="/downloads/split_parts.7z">fourbar obj</a></p>
 <p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/DUMgoqvI5jU" width="560"></iframe></p>
@@ -342,6 +353,12 @@ if __name__ == "__main__":
 <p>作業檔案：<a href="/downloads/fourbar webots.7z">fourbar webots.7z</a></p>
 <p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/lv79jDls2D0" width="560"></iframe></p>
 <p>作業流程</p>
+<p class="cvGsUA direction-ltr align-justify para-style-body"><span class="OYPEnA font-feature-liga-off font-feature-clig-off font-feature-calt-off text-decoration-none text-strikethrough-none">在solvespace繪製零件並將組裝好整個機構之後，先把檔案存起來，接著輸出一個 .stl 檔。</span></p>
+<p class="cvGsUA direction-ltr align-justify para-style-body"><span class="OYPEnA font-feature-liga-off font-feature-clig-off font-feature-calt-off text-decoration-none text-strikethrough-none">然後用 split_stl_to_obj_scale2 這個工具把 .stl 轉成 .obj</span></p>
+<p class="cvGsUA direction-ltr align-justify para-style-body"><span class="OYPEnA font-feature-liga-off font-feature-clig-off font-feature-calt-off text-decoration-none text-strikethrough-none">接下來進入 Webots後，先在場景裡加入一個 Robot 群組。</span></p>
+<p class="cvGsUA direction-ltr align-justify para-style-body"><span class="OYPEnA font-feature-liga-off font-feature-clig-off font-feature-calt-off text-decoration-none text-strikethrough-none">在這個 Robot 裡的 children 加入兩個 Solid 當作是base，再加兩個 HingeJoint，其中一個命名成 joint1，另一個是 joint4。</span></p>
+<p class="cvGsUA direction-ltr align-justify para-style-body"><span class="OYPEnA font-feature-liga-off font-feature-clig-off font-feature-calt-off text-decoration-none text-strikethrough-none">，再接下來的操作和 HW1 差不多，差別在於HW1的 box是用內建，而這次不是用內建的，而是使用自己在solvespace畫好的模型匯入。要將檔案匯入有兩種方式：第一個是用 CadShape 匯入 .obj，第二個是用 Shape -&gt; Mesh 來匯入。而我選擇Shape -&gt; Mesh，這樣比較方便調整顏色。</span></p>
+<p></p>
 <p><img alt="" height="339" src="/images/螢幕擷取畫面 2025-06-03 093922.png" width="468"/></p>
 <p><img alt="" height="198" src="/images/螢幕擷取畫面 2025-06-03 093953.png" width="448"/></p>
 <p><img alt="" height="226" src="/images/螢幕擷取畫面 2025-06-03 094023.png" width="456"/></p>
@@ -357,8 +374,7 @@ if __name__ == "__main__":
 <p><img alt="" height="96" src="/images/螢幕擷取畫面 2025-06-03 094724.png" width="390"/></p>
 <p>HW2 (5%): <span style="background-color: #ffff00;">建立由 CAD 繪製零件組成的平面四連桿機構 Webots 模擬場景</span></p>
 <p>操作影片標題: 國立虎尾科技大學 - 機械設計工程系 - cd2025 HW2 - 學員學號</p>
-<p></p>
-<h2>HW3</h2>
+<p></p><h2>HW3</h2>
 <p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/2FHkLTmIFPo" width="560"></iframe></p>
 <p></p>
 <p><span>作業檔案：</span><a href="/downloads/basketball shoot webots.zip">basketball shoot webots.zip</a></p>
@@ -969,7 +985,88 @@ while robot.step(timestep) != -1:  # 每次時間步進（直到模擬結束）
 </pre>
 <p><span></span></p>
 <p><span>我將原本控制第二台車的按鍵EDSX 改成遊戲常用的WDAS，這樣是能讓移動上更加直覺。</span></p><h2>counter supervisor</h2>
-<h1>Brython</h1>
+<p></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from controller import Supervisor
+
+# 七段顯示器每個數字對應的亮燈狀態（a-g段）
+SEGMENTS = [
+    [1,1,1,1,1,1,0], # 0
+    [0,1,1,0,0,0,0], # 1
+    [1,1,0,1,1,0,1], # 2
+    [1,1,1,1,0,0,1], # 3
+    [0,1,1,0,0,1,1], # 4
+    [1,0,1,1,0,1,1], # 5
+    [1,0,1,1,1,1,1], # 6
+    [1,1,1,0,0,0,0], # 7
+    [1,1,1,1,1,1,1], # 8
+    [1,1,1,1,0,1,1], # 9
+]
+
+# 各個數字位數（百、十、個）對應的材質名稱（a-g 段）
+DIGIT_MATERIALS = [
+    ['a3mat', 'b3mat', 'c3mat', 'd3mat', 'e3mat', 'f3mat', 'g3mat'], # 百位
+    ['a2mat', 'b2mat', 'c2mat', 'd2mat', 'e2mat', 'f2mat', 'g2mat'], # 十位
+    ['a1mat', 'b1mat', 'c1mat', 'd1mat', 'e1mat', 'f1mat', 'g1mat'], # 個位
+]
+
+# 定義亮燈的顏色 (綠色)
+ON_COLOR = [0, 1, 0]
+
+# 定義熄燈的顏色 (深灰)
+OFF_COLOR = [0.05, 0.05, 0.05]
+
+# 設定某一個位數的顯示數字
+def set_digit(supervisor, digit_index, value):
+    segs = SEGMENTS[value]  # 取得該數字對應的七段顯示狀態
+    for i, seg_on in enumerate(segs):
+        # 根據 digit_index 取得該段的材質節點
+        mat_node = supervisor.getFromDef(DIGIT_MATERIALS[digit_index][i])
+        if mat_node:
+            # 設定段的顏色：亮或暗
+            mat_node.getField('diffuseColor').setSFColor(ON_COLOR if seg_on else OFF_COLOR)
+        else:
+            print(f"找不到 {DIGIT_MATERIALS[digit_index][i]} 這個DEF")  # 找不到對應 DEF 時輸出錯誤
+
+# 設定整個顯示器顯示的數字（最多 3 位數）
+def set_display(supervisor, value):
+    value = max(0, min(999, int(value)))  # 限制數值在 0~999 範圍
+    h = value // 100                     # 百位
+    t = (value // 10) % 10               # 十位
+    u = value % 10                       # 個位
+    set_digit(supervisor, 0, h)          # 設定百位數字
+    set_digit(supervisor, 1, t)          # 設定十位數字
+    set_digit(supervisor, 2, u)          # 設定個位數字
+
+# 建立 Supervisor 實例
+supervisor = Supervisor()
+
+# 取得 Webots 中設定的基本時間步長
+timestep = int(supervisor.getBasicTimeStep())
+
+# 初始分數為 0
+score = 0
+
+# 取得名為 "score_receiver" 的裝置（接收分數訊息）
+receiver = supervisor.getDevice("score_receiver")
+receiver.enable(timestep)  # 啟用接收器，並以 timestep 為更新間隔
+
+# 主迴圈，每個時間步執行一次
+while supervisor.step(timestep) != -1:
+    # 當接收器中有資料時
+    while receiver.getQueueLength() &gt; 0:
+        data = receiver.getString()  # 取得接收到的字串資料
+        if data.isdigit():           # 檢查是否是數字字串
+            try:
+                received_score = int(data)  # 將字串轉成整數
+                score += received_score     # 累加到總分
+                print(f"收到得分訊息: +{received_score}, 總分: {score}")  # 印出訊息
+            except Exception as e:
+                print("訊息格式錯誤:", e)  # 如果轉換錯誤，顯示錯誤訊息
+        receiver.nextPacket()  # 移至下一筆封包
+    set_display(supervisor, score)  # 更新七段顯示器的分數顯示
+</pre>
+<p></p>
+<p></p><h1>Brython</h1>
 <p><button id="add1to100">1 add to 100</button></p>
 <!-- 導入 brython 程式庫 -->
 <p>

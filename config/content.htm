@@ -288,6 +288,18 @@ ajax.get(url, oncomplete=on_complete)
 <p></p>
 <p><a href="/downloads/HW1.7z">fourbar webots.7z</a></p>
 <p>操作流程</p>
+<p class="cvGsUA direction-ltr align-start para-style-body"><span class="OYPEnA font-feature-liga-off font-feature-clig-off font-feature-calt-off text-decoration-none text-strikethrough-none">一開始先建一個 robot，然後在它的 children 裡加兩個 hinge joint 跟一個 solid。</span></p>
+<p class="cvGsUA direction-ltr align-start para-style-body"><span class="OYPEnA font-feature-liga-off font-feature-clig-off font-feature-calt-off text-decoration-none text-strikethrough-none">solid 的部分我會把它改名叫做 base，然後在它的 children 裡右鍵新增一個 shape，進到 geometry 裡右鍵新增一個 box，然後把 X 的尺寸設成 1 公尺。</span></p>
+<p class="cvGsUA direction-ltr align-start para-style-body"><span class="OYPEnA font-feature-liga-off font-feature-clig-off font-feature-calt-off text-decoration-none text-strikethrough-none">（之後就不再重複說明怎麼加 box 的步驟了。）</span></p>
+<p class="cvGsUA direction-ltr align-start para-style-body"><span class="OYPEnA font-feature-liga-off font-feature-clig-off font-feature-calt-off text-decoration-none text-strikethrough-none">接著從兩個 hinge joint 任選一個，把它改名成 hinge joint1，另一個就叫 hinge joint4。</span></p>
+<p class="cvGsUA direction-ltr align-start para-style-body"><span class="OYPEnA font-feature-liga-off font-feature-clig-off font-feature-calt-off text-decoration-none text-strikethrough-none">接下來點進 hinge joint1，在它的主線程下面，找到 endpoint，右鍵新增一個 solid，然後調整一下它的數值。rotation 的部分可以自己設定，當作是初始角度。</span></p>
+<p class="cvGsUA direction-ltr align-start para-style-body"><span class="OYPEnA font-feature-liga-off font-feature-clig-off font-feature-calt-off text-decoration-none text-strikethrough-none">在這個 solid 的 children 裡面，再加一個 pose 跟一個 hinge joint，然後把這個 hinge joint 命名為 joint2。</span></p>
+<p class="cvGsUA direction-ltr align-start para-style-body"><span class="OYPEnA font-feature-liga-off font-feature-clig-off font-feature-calt-off text-decoration-none text-strikethrough-none">然後 joint2 的處理方式跟剛剛 joint1 一樣：在 children 裡面新增一個 solid，接著加 pose（放在 box 的中心位置），再加一個 hinge joint，把它命名為 joint3，然後建立第三個 box。</span></p>
+<p class="cvGsUA direction-ltr align-start para-style-body"><span class="OYPEnA font-feature-liga-off font-feature-clig-off font-feature-calt-off text-decoration-none text-strikethrough-none">這樣 box 的結構就完成了，接下來要來設定 jointParameters。</span></p>
+<p class="cvGsUA direction-ltr align-start para-style-body"><span class="OYPEnA font-feature-liga-off font-feature-clig-off font-feature-calt-off text-decoration-none text-strikethrough-none">jointParameters 的重點是在設定關節相對於原點（0,0,0）的座標位置。舉例來說，如果 link1 的座標相對於原點是往負 X 移動 0.5 公尺，那 anchor 的 X 值就要設成 -0.5m。link2 跟 link3 的設法也是一樣的邏輯。</span></p>
+<p class="cvGsUA direction-ltr align-start para-style-body"><span class="OYPEnA font-feature-liga-off font-feature-clig-off font-feature-calt-off text-decoration-none text-strikethrough-none">然後在 joint1 上加一個旋轉馬達，命名為 motor（這會用在後面的控制程式裡）。</span></p>
+<p class="cvGsUA direction-ltr align-start para-style-body"><span class="OYPEnA font-feature-liga-off font-feature-clig-off font-feature-calt-off text-decoration-none text-strikethrough-none">最後一個步驟是幫 link1、link2、link3 建立 boundingObject，這個是用來定義物體的物理碰撞範圍的。</span></p>
+<p></p>
 <p><img alt="" height="106" src="/images/螢幕擷取畫面 2025-06-03 091421.png" width="221"/></p>
 <p><img alt="" height="271" src="/images/螢幕擷取畫面 2025-06-03 091502.png" width="493"/></p>
 <p><img alt="" height="252" src="/images/螢幕擷取畫面 2025-06-03 092004.png" width="571"/></p>
@@ -333,8 +345,7 @@ if __name__ == "__main__":
 <p><br/><br/></p>
 <p>HW1 (5%): <span style="background-color: #ffff00;">建立由 Box 組成的平面四連桿機構 Webots 模擬場景</span></p>
 <p>操作影片標題: 國立虎尾科技大學 - 機械設計工程系 - cd2025 HW1 - 學員學號</p>
-<p></p>
-<h2>HW2</h2>
+<p></p><h2>HW2</h2>
 <p>繪製檔案轉obj</p>
 <p>檔案：<a href="/downloads/split_parts.7z">fourbar obj</a></p>
 <p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/DUMgoqvI5jU" width="560"></iframe></p>
@@ -342,6 +353,12 @@ if __name__ == "__main__":
 <p>作業檔案：<a href="/downloads/fourbar webots.7z">fourbar webots.7z</a></p>
 <p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/lv79jDls2D0" width="560"></iframe></p>
 <p>作業流程</p>
+<p class="cvGsUA direction-ltr align-justify para-style-body"><span class="OYPEnA font-feature-liga-off font-feature-clig-off font-feature-calt-off text-decoration-none text-strikethrough-none">在solvespace繪製零件並將組裝好整個機構之後，先把檔案存起來，接著輸出一個 .stl 檔。</span></p>
+<p class="cvGsUA direction-ltr align-justify para-style-body"><span class="OYPEnA font-feature-liga-off font-feature-clig-off font-feature-calt-off text-decoration-none text-strikethrough-none">然後用 split_stl_to_obj_scale2 這個工具把 .stl 轉成 .obj</span></p>
+<p class="cvGsUA direction-ltr align-justify para-style-body"><span class="OYPEnA font-feature-liga-off font-feature-clig-off font-feature-calt-off text-decoration-none text-strikethrough-none">接下來進入 Webots後，先在場景裡加入一個 Robot 群組。</span></p>
+<p class="cvGsUA direction-ltr align-justify para-style-body"><span class="OYPEnA font-feature-liga-off font-feature-clig-off font-feature-calt-off text-decoration-none text-strikethrough-none">在這個 Robot 裡的 children 加入兩個 Solid 當作是base，再加兩個 HingeJoint，其中一個命名成 joint1，另一個是 joint4。</span></p>
+<p class="cvGsUA direction-ltr align-justify para-style-body"><span class="OYPEnA font-feature-liga-off font-feature-clig-off font-feature-calt-off text-decoration-none text-strikethrough-none">，再接下來的操作和 HW1 差不多，差別在於HW1的 box是用內建，而這次不是用內建的，而是使用自己在solvespace畫好的模型匯入。要將檔案匯入有兩種方式：第一個是用 CadShape 匯入 .obj，第二個是用 Shape -&gt; Mesh 來匯入。而我選擇Shape -&gt; Mesh，這樣比較方便調整顏色。</span></p>
+<p></p>
 <p><img alt="" height="339" src="/images/螢幕擷取畫面 2025-06-03 093922.png" width="468"/></p>
 <p><img alt="" height="198" src="/images/螢幕擷取畫面 2025-06-03 093953.png" width="448"/></p>
 <p><img alt="" height="226" src="/images/螢幕擷取畫面 2025-06-03 094023.png" width="456"/></p>
@@ -357,13 +374,14 @@ if __name__ == "__main__":
 <p><img alt="" height="96" src="/images/螢幕擷取畫面 2025-06-03 094724.png" width="390"/></p>
 <p>HW2 (5%): <span style="background-color: #ffff00;">建立由 CAD 繪製零件組成的平面四連桿機構 Webots 模擬場景</span></p>
 <p>操作影片標題: 國立虎尾科技大學 - 機械設計工程系 - cd2025 HW2 - 學員學號</p>
-<p></p>
-<h2>HW3</h2>
+<p></p><h2>HW3</h2>
 <p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/2FHkLTmIFPo" width="560"></iframe></p>
 <p></p>
 <p><span>作業檔案：</span><a href="/downloads/basketball shoot webots.zip">basketball shoot webots.zip</a></p>
 <p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/0gJGNhaHbIg" width="560"></iframe></p>
 <p>作業流程</p>
+<p></p>
+<p><span class="OYPEnA font-feature-liga-off font-feature-clig-off font-feature-calt-off text-decoration-none text-strikethrough-none">本次作業和HW2流程一樣，需要先將圖檔繪製好組裝好，並將檔案匯出成.obj，再進到webots做組裝，而這次比較特別別的是有增加一顆球和籃框，目標是要將開啟模擬時可以將球投入籃框。</span></p>
 <p><img alt="" height="152" src="/images/螢幕擷取畫面 2025-06-03 095726.png" width="391"/></p>
 <p><img alt="" height="370" src="/images/螢幕擷取畫面 2025-06-03 100321.png" width="451"/></p>
 <p><img alt="" height="223" src="/images/螢幕擷取畫面 2025-06-03 095924.png" width="352"/></p>
@@ -414,8 +432,7 @@ if __name__ == "__main__":
 <p>作業檔案：<a href="/downloads/basketball shoot webots.zip">basketball shoot webots.zip</a></p>
 <p>HW3 (20%):<span style="background-color: #ffff00;">建立 Webots 桌上籃球遊戲機模擬系統</span></p>
 <p>操作影片標題: 國立虎尾科技大學 - 機械設計工程系 - cd2025 HW3 - 學員學號</p>
-<p></p>
-<h1>Midterm</h1>
+<p></p><h1>Midterm</h1>
 <p>各週進度:<span>可攜更改python 313、學員名單、小組名單、四連桿繪製組裝</span></p>
 <p>各週網頁內容:<a href="https://mdecd2025.github.io/hw-41223230/content/task1.html">task1</a>、<a href="https://mdecd2025.github.io/hw-41223230/content/list.html">task1 list</a>、<a href="https://mdecd2025.github.io/hw-41223230/content/task2.html">task2</a>、<a href="https://mdecd2025.github.io/hw-41223230/content/task4.html">task4</a></p>
 <p>期中心得:上完九週的課程，個人覺得這門課比上一門課困難許多，而且目前作業進度落後，需要多加跟上。</p>

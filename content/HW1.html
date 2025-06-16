@@ -147,6 +147,18 @@ img.add_border {
 <p></p>
 <p><a href="./../downloads/HW1.7z">fourbar webots.7z</a></p>
 <p>操作流程</p>
+<p class="cvGsUA direction-ltr align-start para-style-body"><span class="OYPEnA font-feature-liga-off font-feature-clig-off font-feature-calt-off text-decoration-none text-strikethrough-none">一開始先建一個 robot，然後在它的 children 裡加兩個 hinge joint 跟一個 solid。</span></p>
+<p class="cvGsUA direction-ltr align-start para-style-body"><span class="OYPEnA font-feature-liga-off font-feature-clig-off font-feature-calt-off text-decoration-none text-strikethrough-none">solid 的部分我會把它改名叫做 base，然後在它的 children 裡右鍵新增一個 shape，進到 geometry 裡右鍵新增一個 box，然後把 X 的尺寸設成 1 公尺。</span></p>
+<p class="cvGsUA direction-ltr align-start para-style-body"><span class="OYPEnA font-feature-liga-off font-feature-clig-off font-feature-calt-off text-decoration-none text-strikethrough-none">（之後就不再重複說明怎麼加 box 的步驟了。）</span></p>
+<p class="cvGsUA direction-ltr align-start para-style-body"><span class="OYPEnA font-feature-liga-off font-feature-clig-off font-feature-calt-off text-decoration-none text-strikethrough-none">接著從兩個 hinge joint 任選一個，把它改名成 hinge joint1，另一個就叫 hinge joint4。</span></p>
+<p class="cvGsUA direction-ltr align-start para-style-body"><span class="OYPEnA font-feature-liga-off font-feature-clig-off font-feature-calt-off text-decoration-none text-strikethrough-none">接下來點進 hinge joint1，在它的主線程下面，找到 endpoint，右鍵新增一個 solid，然後調整一下它的數值。rotation 的部分可以自己設定，當作是初始角度。</span></p>
+<p class="cvGsUA direction-ltr align-start para-style-body"><span class="OYPEnA font-feature-liga-off font-feature-clig-off font-feature-calt-off text-decoration-none text-strikethrough-none">在這個 solid 的 children 裡面，再加一個 pose 跟一個 hinge joint，然後把這個 hinge joint 命名為 joint2。</span></p>
+<p class="cvGsUA direction-ltr align-start para-style-body"><span class="OYPEnA font-feature-liga-off font-feature-clig-off font-feature-calt-off text-decoration-none text-strikethrough-none">然後 joint2 的處理方式跟剛剛 joint1 一樣：在 children 裡面新增一個 solid，接著加 pose（放在 box 的中心位置），再加一個 hinge joint，把它命名為 joint3，然後建立第三個 box。</span></p>
+<p class="cvGsUA direction-ltr align-start para-style-body"><span class="OYPEnA font-feature-liga-off font-feature-clig-off font-feature-calt-off text-decoration-none text-strikethrough-none">這樣 box 的結構就完成了，接下來要來設定 jointParameters。</span></p>
+<p class="cvGsUA direction-ltr align-start para-style-body"><span class="OYPEnA font-feature-liga-off font-feature-clig-off font-feature-calt-off text-decoration-none text-strikethrough-none">jointParameters 的重點是在設定關節相對於原點（0,0,0）的座標位置。舉例來說，如果 link1 的座標相對於原點是往負 X 移動 0.5 公尺，那 anchor 的 X 值就要設成 -0.5m。link2 跟 link3 的設法也是一樣的邏輯。</span></p>
+<p class="cvGsUA direction-ltr align-start para-style-body"><span class="OYPEnA font-feature-liga-off font-feature-clig-off font-feature-calt-off text-decoration-none text-strikethrough-none">然後在 joint1 上加一個旋轉馬達，命名為 motor（這會用在後面的控制程式裡）。</span></p>
+<p class="cvGsUA direction-ltr align-start para-style-body"><span class="OYPEnA font-feature-liga-off font-feature-clig-off font-feature-calt-off text-decoration-none text-strikethrough-none">最後一個步驟是幫 link1、link2、link3 建立 boundingObject，這個是用來定義物體的物理碰撞範圍的。</span></p>
+<p></p>
 <p><img alt="" height="106" src="./../images/螢幕擷取畫面 2025-06-03 091421.png" width="221"/></p>
 <p><img alt="" height="271" src="./../images/螢幕擷取畫面 2025-06-03 091502.png" width="493"/></p>
 <p><img alt="" height="252" src="./../images/螢幕擷取畫面 2025-06-03 092004.png" width="571"/></p>
@@ -192,8 +204,7 @@ if __name__ == "__main__":
 <p><br/><br/></p>
 <p>HW1 (5%): <span style="background-color: #ffff00;">建立由 Box 組成的平面四連桿機構 Webots 模擬場景</span></p>
 <p>操作影片標題: 國立虎尾科技大學 - 機械設計工程系 - cd2025 HW1 - 學員學號</p>
-<p></p>
-<br />Homework << <a href='Homework.html'>Previous</a> <a href='HW2.html'>Next</a> >> HW2</div>
+<p></p><br />Homework << <a href='Homework.html'>Previous</a> <a href='HW2.html'>Next</a> >> HW2</div>
         
     <!-- footer -->
       <div class="container">
