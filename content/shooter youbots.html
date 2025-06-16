@@ -143,8 +143,105 @@ img.add_border {
           
         </header>
     <div id="tipue_search_content">Final << <a href='Final.html'>Previous</a> <a href='supervisor Robots.html'>Next</a> >> supervisor Robots<br /><h1>shooter youbots</h1>
+<p></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from controller import Robot, Keyboard  # 匯入 Webots 控制所需的 Robot 和 Keyboard 類別
+
+# 常數設定
+TIME_STEP = 32  # 控制循環的時間間隔（毫秒）
+MAX_VELOCITY = 10.0  # 車輪最大速度
+ANGLE_STEP = 40 * 3.14159 / 180  # 將 40 度轉換為弧度（機構用角度）
+POSITION_M = ANGLE_STEP          # 機構移動至 +40 度的位置
+POSITION_K = 0.0                 # 機構移動至 0 度的位置
+
+# 初始化機器人與鍵盤
+robot = Robot()  # 創建 Robot 物件
+timestep = int(robot.getBasicTimeStep())  # 取得機器人基礎時間步長
+keyboard = Keyboard()  # 創建鍵盤物件
+keyboard.enable(timestep)  # 啟用鍵盤偵測，使用相同時間步長
+
+# 嘗試取得馬達與感測器裝置
+try:
+    motor = robot.getDevice('motor1')  # 取得名為 motor1 的馬達裝置
+    sensor = robot.getDevice('motor1_sensor')  # 取得與馬達對應的感測器
+    sensor.enable(timestep)  # 啟用感測器以讀取資料
+    mechanism_enabled = True  # 成功取得裝置，啟用機構控制
+except Exception:
+    mechanism_enabled = False  # 若出錯（裝置不存在），則停用機構功能
+
+# 嘗試取得車輪裝置
+try:
+    wheels = [robot.getDevice(f"wheel{i+1}") for i in range(4)]  # 取得四個車輪裝置
+    for wheel in wheels:
+        wheel.setPosition(float('inf'))  # 設為無限位置，開啟速度控制模式
+        wheel.setVelocity(0)  # 初始速度設為 0
+    platform_enabled = True  # 若成功取得裝置，啟用平台控制
+except Exception:
+    platform_enabled = False  # 若取得失敗，停用平台功能
+
+# 狀態機初始狀態：允許按 F 鍵動作
+current_state = "allow_f"
+
+# 記錄按鍵是否已被按下，用於去彈跳（避免重複觸發）
+key_pressed = {
+    'v': False,  # 記錄 V 鍵是否被按下
+    'f': False   # 記錄 F 鍵是否被按下
+}
+
+# 主循環，重複執行直到模擬結束
+while robot.step(timestep) != -1:
+    key = keyboard.getKey()  # 讀取目前按下的鍵
+
+    # 平台控制（移動用輪子）
+    if platform_enabled:
+        if key == Keyboard.UP:
+            for wheel in wheels:
+                wheel.setVelocity(MAX_VELOCITY)  # 所有輪子向前
+        elif key == Keyboard.DOWN:
+            for wheel in wheels:
+                wheel.setVelocity(-MAX_VELOCITY)  # 所有輪子向後
+        elif key == Keyboard.LEFT:
+            # 左轉（左右輪反方向旋轉）
+            wheels[0].setVelocity(MAX_VELOCITY)
+            wheels[1].setVelocity(-MAX_VELOCITY)
+            wheels[2].setVelocity(MAX_VELOCITY)
+            wheels[3].setVelocity(-MAX_VELOCITY)
+        elif key == Keyboard.RIGHT:
+            # 右轉（左右輪反方向旋轉）
+            wheels[0].setVelocity(-MAX_VELOCITY)
+            wheels[1].setVelocity(MAX_VELOCITY)
+            wheels[2].setVelocity(-MAX_VELOCITY)
+            wheels[3].setVelocity(MAX_VELOCITY)
+        elif key == ord('Q') or key == ord('q'):
+            print("Exiting...")  # 按 Q 結束程式
+            break
+        else:
+            for wheel in wheels:
+                wheel.setVelocity(0)  # 沒有方向鍵按下時停止移動
+
+    # 馬達控制（用 F / V 鍵操作）
+    if mechanism_enabled:
+        _current_motor_position = sensor.getValue()  # 讀取馬達目前位置（可用於除錯）
+
+        # 按下 F 鍵時，若允許且尚未按住，讓馬達轉到 +40 度
+        if key == ord('F') or key == ord('f'):
+            if not key_pressed['f'] and current_state == "allow_f":
+                motor.setPosition(POSITION_M)  # 馬達移動至 +40 度
+                current_state = "allow_v"  # 下一次只能按 V
+            key_pressed['f'] = True  # 標記 F 鍵已按
+        else:
+            key_pressed['f'] = False  # F 鍵已放開
+
+        # 按下 V 鍵時，若允許且尚未按住，讓馬達轉回 0 度
+        if key == ord('V') or key == ord('v'):
+            if not key_pressed['v'] and current_state == "allow_v":
+                motor.setPosition(POSITION_K)  # 馬達移動至 0 度
+                current_state = "allow_f"  # 下一次只能按 F
+            key_pressed['v'] = True  # 標記 V 鍵已按
+        else:
+            key_pressed['v'] = False  # V 鍵已放開
+</pre>
 <p><span></span></p>
-<br />Final << <a href='Final.html'>Previous</a> <a href='supervisor Robots.html'>Next</a> >> supervisor Robots</div>
+<p><span>在原本的城市當中是以M和K作為發射和回復，但我個人覺得有點不習慣，所以就改成了F和V</span></p><br />Final << <a href='Final.html'>Previous</a> <a href='supervisor Robots.html'>Next</a> >> supervisor Robots</div>
         
     <!-- footer -->
       <div class="container">
