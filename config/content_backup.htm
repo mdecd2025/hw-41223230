@@ -835,8 +835,140 @@ while supervisor.step(timestep) != -1:
 </pre>
 <p><span></span></p>
 <p><span>在這程式當中我將原本的A鍵給球變成R鍵給球，然後還有先前的shooter youbots的發射鍵改成F，所以在這邊的M也需要改成F，以免在原本執行上出問題。</span></p><h2>stand youbots</h2>
+<p></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from controller import Robot, Keyboard  # 匯入 Webots 提供的 Robot 與 Keyboard 類別
+
+# 常數定義
+WHEEL_RADIUS = 0.1  # 輪子的半徑（單位：公尺），此處為 10 公分
+L = 0.471  # 機器人長度的一半（用於動力學計算）
+W = 0.376  # 機器人寬度的一半
+MAX_VELOCITY = 10.0  # 輪子的最大速度（單位：rad/s）
+
+# 初始化機器人實體
+robot = Robot()
+
+# 取得模擬的時間步長（time step）
+timestep = int(robot.getBasicTimeStep())
+
+# 取得發射器裝置，用於傳送分數（與其他模組或裝置通訊）
+emitter = robot.getDevice("score_emitter")
+
+score_to_send = 2  # 每次感測成功後加分數，這裡設為 2 分，可自行調整
+
+# 初始化距離感測器（距離球進入感測區的偵測裝置）
+sensor = robot.getDevice('sensor')  # 取得感測器裝置
+sensor.enable(timestep)  # 啟用感測器並設定刷新速率
+
+score = 0  # 初始分數
+last_score_time = 0  # 上一次得分的時間
+cooldown = 1.0  # 冷卻時間（秒），防止重複計分
+
+# 初始化鍵盤控制器
+keyboard = Keyboard()
+keyboard.enable(timestep)  # 啟用鍵盤偵測並設定刷新速率
+
+# 取得四個馬達裝置（四輪全驅）
+wheel5 = robot.getDevice("wheel5")  # 前右輪
+wheel6 = robot.getDevice("wheel6")  # 前左輪
+wheel7 = robot.getDevice("wheel7")  # 後右輪
+wheel8 = robot.getDevice("wheel8")  # 後左輪
+
+# 設定輪子為速度控制模式（inf 表示不限制旋轉角度）
+for wheel in [wheel5, wheel6, wheel7, wheel8]:
+    wheel.setPosition(float('inf'))  # 設定為速度控制（非位置控制）
+    wheel.setVelocity(0)  # 初始速度為 0（靜止）
+
+# 定義控制四個輪子速度的函式
+def set_wheel_velocity(v1, v2, v3, v4):
+    """設定每個輪子的速度"""
+    wheel5.setVelocity(v1)
+    wheel6.setVelocity(v2)
+    wheel7.setVelocity(v3)
+    wheel8.setVelocity(v4)
+
+# 將感測器AD值對應到距離的查表函式（線性插值）
+lookup_table = [
+    (1000, 0.00),
+    (620, 0.12),
+    (372, 0.13),
+    (248, 0.14),
+    (186, 0.15),
+    (0, 0.18)
+]
+
+# 根據感測器的AD值推算實際距離（單位：公尺）
+def ad_to_distance(ad_value):
+    # AD 值遞減時表示距離遞增（感測器邏輯）
+    for i in range(len(lookup_table)-1):
+        a0, d0 = lookup_table[i]
+        a1, d1 = lookup_table[i+1]
+        if a1 &lt;= ad_value &lt;= a0:
+            # 線性插值公式：在 a0 和 a1 之間計算距離值
+            return d0 + (d1 - d0) * (ad_value - a0) / (a1 - a0)
+    # 若超出表格範圍則回傳邊界值
+    if ad_value &gt; lookup_table[0][0]:
+        return lookup_table[0][1]
+    return lookup_table[-1][1]
+
+# 主迴圈開始，負責持續讀取感測器與鍵盤輸入
+print("Use 'W', 'S', 'A', 'D' keys to control the robot.")
+print("W: Move forward, S: Move backward, A: Turn left, D: Turn right.")
+print("Press 'Q' to quit.")
+
+while robot.step(timestep) != -1:  # 每次時間步進（直到模擬結束）
+
+    key = keyboard.getKey()  # 讀取目前按下的鍵
+
+    # 讀取距離感測器數值
+    sensor_value = sensor.getValue()
+    distance = ad_to_distance(sensor_value)  # 轉換成距離（公尺）
+
+    current_time = robot.getTime()  # 取得當前模擬時間
+
+    # 如果按下 F 鍵，印出目前距離（除錯用）
+    if key == ord('F') or key == ord('f'):
+        print(distance)
+
+    # 如果按下 V 鍵，也印出距離（除錯用）
+    if key == ord('V') or key == ord('v'):
+        print(distance)
+
+    # 若感測距離小於 0.11 公尺，且超過冷卻時間，則加分
+    if distance &lt; 0.11 and (current_time - last_score_time) &gt; cooldown:
+        score += 2
+        print("得分")  # 顯示得分訊息
+        print(distance)  # 顯示當前距離
+        emitter.send(str(score_to_send).encode('utf-8'))  # 傳送分數給外部（如顯示器）
+
+        last_score_time = current_time  # 更新上次得分時間
+
+    # 根據按鍵控制輪子移動方向
+    if key == ord('S') or key == ord('w'):
+        # 前進
+        velocity = MAX_VELOCITY
+        set_wheel_velocity(velocity, velocity, velocity, velocity)
+    elif key == ord('W') or key == ord('s'):
+        # 後退
+        velocity = -MAX_VELOCITY
+        set_wheel_velocity(velocity, velocity, velocity, velocity)
+    elif key == ord('D') or key == ord('d'):
+        # 右轉：左輪前進，右輪後退
+        velocity = MAX_VELOCITY
+        set_wheel_velocity(-velocity, velocity, -velocity, velocity)
+    elif key == ord('A') or key == ord('a'):
+        # 左轉：左輪後退，右輪前進
+        velocity = MAX_VELOCITY
+        set_wheel_velocity(velocity, -velocity, velocity, -velocity)
+    elif key == ord('Q') or key == ord('q'):
+        # 離開程式
+        print("Exiting...")
+        break
+    else:
+        # 沒有按鍵時停止移動
+        set_wheel_velocity(0, 0, 0, 0)
+</pre>
 <p><span></span></p>
-<h2>counter supervisor</h2>
+<p><span>我將原本控制第二台車的按鍵EDSX 改成遊戲常用的WDAS，這樣是能讓移動上更加直覺。</span></p><h2>counter supervisor</h2>
 <h1>Brython</h1>
 <p><button id="add1to100">1 add to 100</button></p>
 <!-- 導入 brython 程式庫 -->
