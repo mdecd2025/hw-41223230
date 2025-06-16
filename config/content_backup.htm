@@ -401,6 +401,8 @@ if __name__ == "__main__":
 <p><img alt="" height="96" src="/images/螢幕擷取畫面 2025-06-03 101905.png" width="484"/></p>
 <p><img alt="" height="292" src="/images/螢幕擷取畫面 2025-06-03 100459.png" width="450"/></p>
 <p><img alt="" height="364" src="/images/螢幕擷取畫面 2025-06-03 100528.png" width="474"/></p>
+<p>心得：這次的作業做起來相對於之前兩次順手，這次一樣是要先繪製、轉檔案再進入webots做操作，這次比較特別的就是多加了籃框和一顆球，而球的部分我一開始以為是要自己繪製，但後來再做設置的時候感覺怪怪的，詢問同學後才知道內建就有球體可做使用，害我還花時間去畫一顆球轉檔來用。</p>
+<p></p>
 <p>作業檔案：<a href="/downloads/basketball hoop webots.7z">basketball hoop webots.7z</a></p>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># 從 Webots 的 controller 模組中導入 Robot 類別
 from controller import Robot
@@ -461,9 +463,10 @@ if __name__ == "__main__":
 <p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/pbTT2thODIQ" width="560"></iframe></p>
 <p></p>
 <p>作業檔案：<a href="/downloads/exam1.7z">exam1</a></p>
+<p>過程：<br/>1.首先我們在做exam1前要先去solvespace內畫出我們除了起始角30度以外的角度，繪畫完後得到我們link1為30度、limk2為41.79度、link3為130.6度。<br/>2.這三個角度轉為弳度為0.523599、0.729373、2.2794<br/>3.這次作業使用HW1的檔案下去做修改<br/>4.首先展開joint1裡面link1的rotation內的angle改為0.523599<br/>5.再來是展開joint2裡面link2的rotation內的angle改為0.724137<br/>6.最後展開joint3裡面link3的rotation內的angle改為2.2794<br/>7.回到link2的children，再加入一個pose，展開裡面的translation XYZ改為0.3、0.2、0；pose內children加入shape<br/>8.shape內的geometry加入box，將size XYZ改為0.1、0.3、0.1<br/>9.最後儲存，開啟模擬成功<br/>心得：<br/>這次的exam1，使用先前HW1下去做更改，一開始一個一找要更改的部分，前後約使用1個小時，然後成功後再錄影，錄完約6分鐘，完整地做完後對於整體架構又更加理解。</p>
+<p></p>
 <p>Exam1 (10%): 建立 Webots 基本物件模擬場景</p>
-<p>操作影片標題: 國立虎尾科技大學 - 機械設計工程系 - cd2025 Exam1 - 學員學號</p>
-<h2>Exam2</h2>
+<p>操作影片標題: 國立虎尾科技大學 - 機械設計工程系 - cd2025 Exam1 - 學員學號</p><h2>Exam2</h2>
 <p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/-Ep97y43Vko" width="560"></iframe></p>
 <p></p>
 <p>考試檔案：<a href="/downloads/slvs.7z">slvs</a>、<a href="/downloads/webots.7z">webots</a></p>
