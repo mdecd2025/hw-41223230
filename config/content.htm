@@ -342,7 +342,9 @@ def run_robot():
 if __name__ == "__main__":
     run_robot()
 </pre>
-<p><br/><br/></p>
+<p></p>
+<p>心得：這是第一次使用webots，過程當中遇到超多問題，一開始是如何做設置、模擬程式導入許多問題，好險問同學之後慢慢地學會使用。</p>
+<p></p>
 <p>HW1 (5%): <span style="background-color: #ffff00;">建立由 Box 組成的平面四連桿機構 Webots 模擬場景</span></p>
 <p>操作影片標題: 國立虎尾科技大學 - 機械設計工程系 - cd2025 HW1 - 學員學號</p>
 <p></p><h2>HW2</h2>
@@ -372,6 +374,8 @@ if __name__ == "__main__":
 <p><img alt="" height="130" src="/images/螢幕擷取畫面 2025-06-03 094613.png" width="359"/></p>
 <p><img alt="" height="93" src="/images/螢幕擷取畫面 2025-06-03 094659.png" width="399"/></p>
 <p><img alt="" height="96" src="/images/螢幕擷取畫面 2025-06-03 094724.png" width="390"/></p>
+<p></p>
+<p>心得：這次作業是使用自己所畫的圖檔，導入webots做使用，在這之前需要先將檔案會成obj，一開始我是使用<span class="OYPEnA font-feature-liga-off font-feature-clig-off font-feature-calt-off text-decoration-none text-strikethrough-none">solvespace直接匯出導入webots後，發現變超級大的，原來webots所使用的單位是m公尺，所以我們所繪製的圖與變成了m公尺，後來才得知是需要使用split_stl_to_obj_scale2 這個工具，轉出轉換單位的obj才得以解決。</span></p>
 <p>HW2 (5%): <span style="background-color: #ffff00;">建立由 CAD 繪製零件組成的平面四連桿機構 Webots 模擬場景</span></p>
 <p>操作影片標題: 國立虎尾科技大學 - 機械設計工程系 - cd2025 HW2 - 學員學號</p>
 <p></p><h2>HW3</h2>
@@ -397,6 +401,8 @@ if __name__ == "__main__":
 <p><img alt="" height="96" src="/images/螢幕擷取畫面 2025-06-03 101905.png" width="484"/></p>
 <p><img alt="" height="292" src="/images/螢幕擷取畫面 2025-06-03 100459.png" width="450"/></p>
 <p><img alt="" height="364" src="/images/螢幕擷取畫面 2025-06-03 100528.png" width="474"/></p>
+<p>心得：這次的作業做起來相對於之前兩次順手，這次一樣是要先繪製、轉檔案再進入webots做操作，這次比較特別的就是多加了籃框和一顆球，而球的部分我一開始以為是要自己繪製，但後來再做設置的時候感覺怪怪的，詢問同學後才知道內建就有球體可做使用，害我還花時間去畫一顆球轉檔來用。</p>
+<p></p>
 <p>作業檔案：<a href="/downloads/basketball hoop webots.7z">basketball hoop webots.7z</a></p>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># 從 Webots 的 controller 模組中導入 Robot 類別
 from controller import Robot
