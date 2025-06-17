@@ -1,0 +1,324 @@
+<!DOCTYPE html><html>
+        <head>
+        <title>cd_hw</title>
+        <meta charset="utf-8">
+<meta property="head" content="H3">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/icomoon/style.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/bootstrap.min.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/magnific-popup.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/jquery-ui.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/owl.carousel.min.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/owl.theme.default.min.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/bootstrap-datepicker.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/flaticon/font/flaticon.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/aos.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/style.css">
+        <link rel="shortcut icon" href="./../cmsimde/static/favicons.png">
+        
+        <style type='text/css'>
+            .site-section {
+            background-color: #FFFF;
+            padding: 40px 40px;
+            }
+            body > div > div.dropdown.open {
+                display: block;
+            }
+        </style>
+    
+        <!-- <script src="./../cmsimde/static/jquery.js"></script> -->
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+        <script src="../cmsimde/static/chimper/js/jquery-3.3.1.min.js"></script>
+        <link rel="stylesheet" href="./../cmsimde/static/tipuesearch/css/normalize.min.css">
+        <script src="./../cmsimde/static/tipuesearch/tipuesearch_set.js"></script>
+        <script src="tipuesearch_content.js"></script>
+        <link rel="stylesheet" href="./../cmsimde/static/tipuesearch/css/tipuesearch.css">
+        <script src="./../cmsimde/static/tipuesearch/tipuesearch.js"></script>
+        <!-- for Wink3 客製化關閉 -->
+        <!--
+        <link rel="stylesheet" type="text/css" href="./../cmsimde/static/winkPlayer.css" />
+        <script type="text/javascript" src="./../cmsimde/static/winkPlayer.js"></script>
+        -->
+        <script>
+            /* original tipuesearch
+            $(document).ready(function() {
+                 $('#tipue_search_input').tipuesearch();
+            });
+            */
+            // customed doSearch
+            function doSearch() {
+                $('#tipue_search_input').tipuesearch({
+                    newWindow: true, 
+                    minimumLength: 2,
+                    wholeWords: false, // for search 中文
+                });
+            }
+            $(document).ready(doSearch);
+        </script>
+        
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shCore.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushBash.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushDiff.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushJScript.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushJava.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushPython.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushSql.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushHaxe.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushXml.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushPhp.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushPowerShell.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushLua.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushMojo.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushWbt.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCpp.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCss.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCSharp.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushDart.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushRust.js"></script>
+<link type="text/css" rel="stylesheet" href="./../cmsimde/static/syntaxhighlighter/css/shCoreDefault.css"/>
+<script type="text/javascript">SyntaxHighlighter.all();</script>
+<!-- 暫時不用
+<script src="./../cmsimde/static/fengari-web.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/Cango-13v08-min.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/CangoAxes-4v01-min.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/gearUtils-05.js"></script>
+-->
+<!-- for Brython 暫時不用
+<script src="https://scrum-3.github.io/web/brython/brython.js"></script>
+<script src="https://scrum-3.github.io/web/brython/brython_stdlib.js"></script>
+-->
+<style>
+img.add_border {
+    border: 3px solid blue;
+}
+</style>
+
+</head>
+<body>
+<div class='container'><nav>
+        
+    <div class="site-wrap">
+
+    <div class="site-mobile-menu">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+    
+            <header class="site-navbar py-4 bg-white" role="banner">
+              <div class="container">
+                <div class="row align-items-center">
+                <h1>cd2025  協同產品實習41223230網站</h1>
+                <div class="pl-4">
+                    <form>
+                    <input type="text" placeholder="Search" name="q" id="tipue_search_input" pattern=".{2,}" title="At least 2 characters" required>
+                    </form>
+                </div>
+                  <!-- <div class="col-11 col-xl-2">
+                    <h1 class="mb-0 site-logo"><a href="index.html" class="text-black h2 mb-0">cd2025  協同產品實習41223230網站</a></h1> 
+                  </div>
+                  -->
+                  <div class="col-12 col-md-10 d-none d-xl-block">
+                    <nav class="site-navigation position-relative text-right" role="navigation">
+    <ul class='site-menu js-clone-nav mr-auto d-none d-lg-block'>
+                        <li class="active has-children"><a href="index.html">Home</a>
+                        <ul class="dropdown">
+                            <li><a href="sitemap.html">SMap</a></li>
+                            <li><a href="./../reveal/index.html">reveal</a></li>
+                            <li><a href="./../blog/index.html">blog</a></li>
+                        </ul>
+                      </li>
+                     <li class='has-children'><a href='About.html'>About</a><ul class='dropdown'><li><a href='repo.html'>repo</a></li></ul><li class='has-children'><a href='Tasks.html'>Tasks</a><ul class='dropdown'><li class='has-children'><a href='task1.html'>task1</a><ul class='dropdown'><li><a href='list.html'>list</a></li></ul><li><a href='task2.html'>task2</a><li><a href='task3.html'>task3</a><li><a href='task4.html'>task4</a><li><a href='task5.html'>task5</a><li class='has-children'><a href='task6.html'>task6</a><ul class='dropdown'><li><a href='Tutorial1.html'>Tutorial1</a><li><a href='Tutorial2.html'>Tutorial2</a><li><a href='Tutorial3.html'>Tutorial3</a></li></li></ul></ul><li class='has-children'><a href='Homework.html'>Homework</a><ul class='dropdown'><li><a href='HW1.html'>HW1</a><li><a href='HW2.html'>HW2</a><li><a href='HW3.html'>HW3</a></li></ul><li><a href='Midterm.html'>Midterm</a><li class='has-children'><a href='Exam.html'>Exam</a><ul class='dropdown'><li><a href='Exam1.html'>Exam1</a><li><a href='Exam2.html'>Exam2</a><li><a href='Exam3.html'>Exam3</a></li></ul><li class='has-children'><a href='Final.html'>Final</a><ul class='dropdown'><li><a href='shooter youbots.html'>shooter youbots</a><li><a href='supervisor Robots.html'>supervisor Robots</a><li><a href='stand youbots.html'>stand youbots</a><li><a href='counter supervisor.html'>counter supervisor</a></li></ul><li><a href='Brython.html'>Brython</a></li>
+                      </ul>
+                </nav>
+              </div>
+              <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
+              </div>
+
+            </div>
+          </div>
+          
+        </header>
+    <div id="tipue_search_content">Tutorial2 << <a href='Tutorial2.html'>Previous</a> <a href='Homework.html'>Next</a> >> Homework<br /><h1>Tutorial3</h1>
+<p>The aim of this tutorial is to familiarize yourself with some nodes related to the graphical rendering. Good looking simulations can be created very quickly when these nodes are used adequately. A good graphics quality does not only enhance the user's experience, it is also essential for simulations where robots perceive their environment (camera image processing, line following, etc.).</p>
+<p>這個教學的目的是讓你熟悉一些跟圖形渲染相關的節點。只要善用這些節點，就能很快做出視覺效果不錯的模擬畫面。畫面品質好不只會讓使用者體驗更好，對於那些需要靠影像來感知環境的模擬（像是攝影機影像處理、循線等等）來說，也非常重要。</p>
+<hr/>
+<p><strong>Light</strong></p>
+<p>Lights The lighting of a world is determined by Light nodes and the Background . There are three types of light nodes: the DirectionalLight, the PointLight and the SpotLight. A DirectionalLight simulates a light which is infinitely far (ex: the sun), a PointLight simulates light emitted from a single point (ex: a light bulb), and a SpotLight simulates a conical light (ex: a flashlight). This figure shows a comparison between them. Each type of light node can cast shadows.</p>
+<p>一個場景的光線是由 Light 節點和背景來決定的。Light 節點有三種類型：DirectionalLight（方向光）、PointLight（點光源）和 SpotLight（聚光燈）。</p>
+<p>DirectionalLight 模擬的是從無限遠處照射過來的光（例如：太陽）。</p>
+<p>PointLight 則是從某個點發出來的光（例如：電燈泡）。</p>
+<p>SpotLight 則是錐形照射的光（例如：手電筒）。</p>
+<p> </p>
+<p>lighting 照明、光線配置，指整個場景的光影效果。<br/>determined by 由...決定，常用於說明某件事的因素或來源。<br/>Light nodes 燈光節點，是 Webots 中用來產生光源的物件。<br/>Background 背景，這裡指模擬環境的背景會影響整體照明效果。<br/>DirectionalLight 方向光，模擬來自遠處（如太陽）的平行光。<br/>PointLight 點光源，模擬從一個點向四周發射的光（如燈泡）。<br/>SpotLight 聚光燈，模擬錐形範圍內的光（如手電筒）。<br/>simulate 模擬、模仿，是模擬軟體常見的術語。<br/>cast shadows 投影，意指該光源會產生陰影效果。<br/>Reference Manual 參考手冊，通常指官方文件或說明書。</p>
+<p></p>
+<p>1.The lighting of a world is determined by Light nodes and the Background.</p>
+<p>句型結構：被動語態（is determined by）</p>
+<p>主詞：The lighting of a world（這個世界的照明）</p>
+<p>動詞：is determined（被決定）</p>
+<p>介詞片語：by Light nodes and the Background（由光源節點和背景決定）</p>
+<p>用來強調「誰」或「什麼」決定了照明效果，是科技文常見句型。</p>
+<p>2.There are three types of light nodes: the DirectionalLight, the PointLight and the SpotLight.</p>
+<p>句型結構：There are + 名詞（用來說明有某些東西存在）</p>
+<p>適合用來介紹種類、列表或分類。</p>
+<p>3.A DirectionalLight simulates a light which is infinitely far.</p>
+<p>文法重點：</p>
+<p>which is infinitely far 是形容詞子句，用來修飾「light」</p>
+<p>infinitely 為副詞，修飾形容詞 far，表示「非常遠」。</p>
+<p>常見的定義型句式，用來描述某個東西的作用或特性。</p>
+<p>4.Each type of light node can cast shadows.</p>
+<p>句型結構：助動詞 can + 原形動詞（cast）→ 表示能力</p>
+<p>用來說明這些光源節點有什麼功能。</p>
+<p>5.You can find their complete documentation in the Reference Manual.</p>
+<p>句型結構：can + find（表達能力/可能）</p>
+<p>是一種常見的指引說法，鼓勵讀者去查閱手冊。</p>
+<hr/>
+<p><strong>Modify the Appearance of the Walls</strong></p>
+<p>Modify the Appearance of the Walls<br/>The aim of this subsection is to color the walls in blue.</p>
+<p>The Appearance and PBRAppearance nodes of the Shape node determine the graphical appearance of the object. Among other things, these nodes are responsible for the color and texture of objects.</p>
+<p>Prefer PBRAppearances for a better rendering as shown in the following comparison.</p>
+<p>Hands-on #2: In the Shape node representing graphically the first wall, add a PBRAppearance node to the appearance field.</p>
+<p>Set its baseColor field to blue using the color selector.<br/>Set its metalness field to 0 using the field editor.<br/>Finally, set its roughness field to 0.5 using the field editor.<br/>If the DEF-USE mechanism of the previous tutorial has been correctly implemented, all the walls should turn blue.</p>
+<p>Add an Existing Appearance to the Ball<br/>A number of pre-defined PBRAppearance are provided in the Webots release.</p>
+<p>Hands-on #3: Add a pre-defined PBRAppearance</p>
+<p>Select the appearance field and remove the previously added node. To do this, either press the "delete" button on your keyboard or right-click on the field and select "delete" from the menu. The field should now say "appearance NULL" instead of "appearance PBRAppearance".<br/>Double-click on the field again, then navigate to PROTO nodes (Webots Projects), then appearances and select OldSteel (PBRAppearance).</p>
+<p></p>
+<p>修改牆壁的外觀<br/>這一小節的目標是把牆壁改成藍色的。</p>
+<p>在 Webots 中，Shape 節點裡的 Appearance 跟 PBRAppearance 這兩個節點會決定物件的外觀。像是顏色、材質（紋理）等等都是靠它們設定的。</p>
+<p>為了讓畫面更真實，建議你使用 PBRAppearance，下面這張圖就展示了兩者的差別。</p>
+<p></p>
+<p>實做 #2：讓第一面牆變藍色<br/>找到用來顯示第一面牆的 Shape 節點，在它的 appearance 欄位加上一個 PBRAppearance 節點。</p>
+<p>把 baseColor（底色）設成藍色，可以用顏色選擇器來設。</p>
+<p>把 metalness（金屬感）設成 0，用欄位編輯器改。</p>
+<p>把 roughness（粗糙度）設成 0.5，也是一樣用欄位編輯器改。</p>
+<p>如果你有按照前一個教學設定好 DEF-USE 機制，那麼只要改一面牆，其他牆也會一起變藍。</p>
+<p>##給球體加上已經做好的外觀<br/>Webots 裡面其實有一堆預設好的 PBRAppearance，可以直接拿來用。</p>
+<p>實做 #3：套用一個預設的 PBRAppearance<br/>先選到球體的 appearance 欄位，刪掉原本加的節點。可以按鍵盤上的 delete，或者右鍵點選「delete」。</p>
+<p>成功刪除的話，欄位會從「appearance PBRAppearance」變成「appearance NULL」。</p>
+<p>接著再雙擊這個欄位，然後依序點進：</p>
+<p>PROTO nodes (Webots Projects) → appearances → 選 OldSteel (PBRAppearance)。</p>
+<p></p>
+<p><br/>Appearance / PBRAppearance 控制物件的外觀樣式，PBRAppearance 提供更真實的渲染效果。<br/>Shape node Webots 中用來表示物體形狀的節點。<br/>baseColor 物件的底色。<br/>metalness 金屬感，用數值表達材質像不像金屬（0 = 非金屬，1 = 金屬）。<br/>roughness 粗糙程度，數值越高越不光滑。<br/>field editor 欄位編輯器，用來改節點的屬性。<br/>color selector 顏色選擇器，點選後可選顏色。<br/>appearance NULL 表示目前沒有設定 appearance。<br/>PROTO node 預先定義好的節點，可以重複使用。<br/>DEF-USE 機制 Webots 中讓一個節點可以重複使用的機制。</p>
+<p></p>
+<p>1.The aim of this subsection is to...</p>
+<p>結構：主詞 + be 動詞 + to V</p>
+<p>用來說明某段教學的目的，很常見於技術文件。</p>
+<p>2.Among other things, these nodes are responsible for...</p>
+<p>表達「除了其他功能外，這些節點的責任是...」</p>
+<p>be responsible for 表示「負責…」、「控制…」</p>
+<p>3.Set its baseColor field to blue using the color selector.</p>
+<p>這是一種常見的指令句，用動詞原形開頭（Set），常見於說明手冊。</p>
+<p>using + 工具 → 表示用什麼工具去完成動作。</p>
+<p>4.If the DEF-USE mechanism... has been correctly implemented...</p>
+<p>現在完成式被動語態：has been + 過去分詞</p>
+<p>表示某個設定是否已經正確完成。</p>
+<p>5.Select the appearance field and remove...</p>
+<p>這類句子都是指令式，直接用動詞原形（Select, Remove）開頭，常見於步驟教學。</p>
+<hr/>
+<p data-pm-slice="0 0 []"><strong>Add a Texture from Disk</strong></p>
+<p>Add a Texture from Disk The aim of this subsection is to apply a locally available texture to the ball. A texture on a rolling object can help to appreciate its movement. Hands-on #4: add a locally available texture to the ball. Download the texture available here and save it to your disk. Remove the previously added node from the appearance field and add a PBRAppearance node instead. Add an ImageTexture node to the baseColorMap field of the PBRAppearance node. Add an item to the ImageTexture's url field using the Add button. Then set the value of the newly added url item using the "Select" button. Follow the path to the location where you saved the texture and select it. The texture URLs must be defined either relative to the worlds directory of your project directory or relative to the default project directory WEBOTS_HOME/projects/default/worlds. Open the red_brick_wall.jpg texture in an image viewer while you observe how it is mapped onto the Sphere node in Webots. Textures are mapped onto Geometry nodes according to predefined UV mapping functions described in the Reference Manual. A UV mapping function maps a 2D image representation to a 3D model.</p>
+<p></p>
+<p>這一小節的目的是把本機電腦上的材質圖貼到球體上。<br/>球體有材質圖的話，當它在滾動時，你會更容易看出它的動作。</p>
+<p>實作 #4：給球體加上一張本地的材質貼圖<br/>先下載這裡提供的材質圖，然後把它存到你的電腦上。</p>
+<p>到 appearance 欄位，把之前加的節點刪掉，改成加一個 PBRAppearance 節點。</p>
+<p>在這個 PBRAppearance 裡的 baseColorMap 欄位，加一個 ImageTexture 節點。</p>
+<p>點一下 ImageTexture 的 url 欄位，用「Add」按鈕新增一個項目。</p>
+<p>新增完以後，按「Select」按鈕，選取你剛才下載的圖片。</p>
+<p>找到你存放圖片的資料夾，選取那張圖片。</p>
+<p>小提醒：這個圖片的網址（URL）一定要是相對於你的 world 資料夾，或者是相對於 Webots 的預設資料夾：WEBOTS_HOME/projects/default/worlds。</p>
+<p>接著，你可以在圖像檢視器中打開這張 red_brick_wall.jpg 圖片，一邊觀察它是怎麼被貼到球體（Sphere node）上的。</p>
+<p>貼圖是怎麼運作的？<br/>Webots 會根據預先定義好的 UV mapping 函數，把 2D 的圖片貼到 3D 物件上。</p>
+<p>UV mapping 就是把一張平面圖片「攤平」貼到 3D 模型表面的技術，詳細的說明可以看參考手冊。</p>
+<p></p>
+<p><br/>texture 材質圖、貼圖，用來給物件表面加上圖案或細節。<br/>locally available 本機可用的，表示檔案已經存在於你的電腦中。<br/>apply 套用（某個設定、圖案等）。<br/>rolling object 滾動中的物體（如球）。<br/>ImageTexture Webots 中用來載入圖片貼圖的節點。<br/>url field 圖片的位置（網址或路徑），可以是相對路徑。<br/>baseColorMap 貼圖的位置，會貼在物件的底色上。<br/>relative to 相對於…（用於說明檔案路徑的定位）。<br/>UV mapping 把 2D 圖片對應到 3D 模型的技術。<br/>WEBOTS_HOME Webots 的安裝根目錄（系統預設資料夾）。</p>
+<p></p>
+<p>1.The aim of this subsection is to...</p>
+<p>句型結構：主詞 + be + to V</p>
+<p>用來說明這段內容的目標或任務。</p>
+<p>2.can help to appreciate its movement</p>
+<p>help to V 是常見結構，表示「幫助你能...」</p>
+<p>appreciate 在這裡不是「感激」，而是「看得出來、欣賞」。</p>
+<p>3.Follow the path to...</p>
+<p>這是常見的操作指令句，叫使用者去找某個路徑或資料夾。</p>
+<p>4.Textures are mapped onto...</p>
+<p>被動語態：Textures are mapped（貼圖被套用到…上）</p>
+<p>技術說明中常見的語態，用來解釋系統自動處理的事情。</p>
+<p>5.described in the Reference Manual</p>
+<p>過去分詞當形容詞使用，說明「被描述於參考手冊中」。</p>
+<hr/>
+<p><strong>Rendering Options</strong></p>
+<p>Rendering Options Webots offers several rendering modes available in the View menu. Hands-on #5: View the simulation in wireframe mode by using the View / Wireframe Rendering menu item. Then restore the plain rendering mode: View / Plain Rendering. Others rendering features can be helpful: View Coordinates systems: View / Optional Rendering / Show Coordinates System ctrl-F1 View distance sensor rays: View / Optional Rendering / Show DistanceSensor Rays ctrl-F10</p>
+<p></p>
+<p>Webots 提供了幾種不同的渲染模式，你可以從 View（檢視）選單中切換。</p>
+<p>實作 #5：切換線框模式<br/>到選單中點選：View / Wireframe Rendering，就可以切換成 線框模式（看起來像只有線條輪廓的畫面）。</p>
+<p>想要恢復正常顯示，選擇：View / Plain Rendering。</p>
+<p>除了這些，還有其他實用的渲染功能可以幫助你觀察模擬：</p>
+<p>顯示座標系統：View / Optional Rendering / Show Coordinates System（快捷鍵：Ctrl + F1）</p>
+<p>顯示距離感測器的光線：View / Optional Rendering / Show DistanceSensor Rays（快捷鍵：Ctrl + F10）</p>
+<p></p>
+<p>1.Webots offers several rendering modes...</p>
+<p>offer + 受詞：提供...</p>
+<p>用來介紹功能是很常見的句型。</p>
+<p>2.Hands-on #5: View the simulation in wireframe mode...</p>
+<p>指令句：直接用動詞原形（View）開頭，常見於教學手冊。</p>
+<p>in wireframe mode：用介系詞 in 表示「以某種模式」。</p>
+<p>3.Then restore the plain rendering mode...</p>
+<p>restore：恢復，這裡用來指切換回預設顯示方式。</p>
+<p>4.Others rendering features can be helpful:</p>
+<p>正確寫法應該是 Other rendering features（語法上這是小錯誤，other 沒有 s）</p>
+<p>can be helpful：可以很有幫助，常見於說明提示中。</p>
+<p>5.Show Coordinates System ctrl-F1</p>
+<p>命令 + 快捷鍵：這種格式在教學說明中很常見，用來告知操作與快捷鍵對應方式。</p><br />Tutorial2 << <a href='Tutorial2.html'>Previous</a> <a href='Homework.html'>Next</a> >> Homework</div>
+        
+    <!-- footer -->
+      <div class="container">
+        <div class="row pt-3 mx-auto">
+            <p>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            </p>
+        </div>
+      </div>
+    <!-- for footer -->
+    
+        </div> <!-- for site wrap -->
+            <!-- <script src="../cmsimde/static/chimper/js/jquery-3.3.1.min.js"></script> -->
+            <script src="../cmsimde/static/chimper/js/jquery-migrate-3.0.1.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery-ui.js"></script>
+            <script src="../cmsimde/static/chimper/js/popper.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/bootstrap.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/owl.carousel.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.stellar.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.countdown.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.magnific-popup.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/bootstrap-datepicker.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/aos.js"></script>
+            <!--
+            <script src="../cmsimde/static/chimper/js/typed.js"></script>
+                    <script>
+                    var typed = new Typed('.typed-words', {
+                    strings: ["Web Apps"," WordPress"," Mobile Apps"],
+                    typeSpeed: 80,
+                    backSpeed: 80,
+                    backDelay: 4000,
+                    startDelay: 1000,
+                    loop: true,
+                    showCursor: true
+                    });
+                    </script>
+            -->
+            <script src="../cmsimde/static/chimper/js/main.js"></script>
+        
+<!-- 啟用 LaTeX equations 編輯 -->
+  <!-- <script>
+  MathJax = {
+    tex: {inlineMath: [['$', '$'], ['\(', '\)']]}
+  };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>-->
+    </body></html>
+        

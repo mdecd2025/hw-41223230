@@ -256,7 +256,484 @@ ajax.get(url, oncomplete=on_complete)
 <p></p>
 <p></p>
 <h2>task6</h2>
-<h1>Homework</h1>
+<h3>Tutorial1</h3>
+<p><strong>Start webots</strong></p>
+<p>1.啟動 Webots<br/>如果你還沒安裝 Webots，請先下載並安裝。安裝完成後，雙擊 Webots 的圖示啟動程式。第一次啟動時，可能會要求你選擇介面主題，選擇你喜歡的即可。</p>
+<p>2.建立新專案<br/>點選「檔案」&gt;「新建」&gt;「新建專案目錄」，然後設定專案名稱為 my_first_simulation，並將世界檔案命名為 my_first_simulation.wbt。確保勾選「加入矩形競技場」選項，這樣就會自動建立一個包含地板和牆壁的簡單環境。</p>
+<hr/>
+<p>Create a New World</p>
+<p>A World is a file containing information like where the objects are, what they look like, how they interact with each other, what is the color of the sky, and the definitions of gravity, friction, masses of the objects, etc. It defines the initial state of a simulation. The different objects are called Nodes and are organized hierarchically in a Scene Tree. Therefore, a node may contain sub-nodes. A world is stored in a file having the .wbt extension. The file format is derived from the VRML97 language, and is human readable. The world files must be stored directly in a directory called worlds.</p>
+<p>一個<strong data-end="29" data-start="23">世界</strong>（World）是一個檔案，包含像是物體的位置、外觀、它們如何互動、天空的顏色、以及重力、摩擦力、物體質量等定義的資訊。它定義了模擬的初始狀態。不同的物體被稱為<strong data-end="114" data-start="108">節點</strong>（Nodes），並且以<strong data-end="132" data-start="125">場景樹</strong>（Scene Tree）的階層結構組織。因此，一個節點可能包含子節點。世界檔案儲存在具有<span> </span><code data-end="183" data-start="177">.wbt</code><span> </span>副檔名的檔案中。該檔案格式源自 VRML97 語言，並且是人類可讀的。世界檔案必須直接儲存在名為<span> </span><strong data-end="243" data-start="233">worlds</strong><span> </span>的資料夾中。</p>
+<p>World – 世界，這是 Webots 的基本檔案類型，定義模擬的初始狀態。</p>
+<p>File – 檔案，這裡指的是儲存世界資訊的檔案。</p>
+<p>Objects – 物體，Webots 中的模擬物件。</p>
+<p>Interact with – 互動，指的是物體之間的交互行為。</p>
+<p>Color of the sky – 天空顏色，環境的一部分，通常會在背景設定中修改。</p>
+<p>Gravity – 重力，物理參數之一。</p>
+<p>Friction – 摩擦力，物理參數之一。</p>
+<p>Masses – 質量，物理參數之一。</p>
+<p>Nodes – 節點，Webots 中的基本物件，可以包含其他物件（子節點）。</p>
+<p>Scene Tree – 場景樹，將節點按照層次結構組織的方式。</p>
+<p>Sub-nodes – 子節點，節點下層的結構。</p>
+<p>.wbt extension – .wbt 副檔名，Webots 世界檔的格式。</p>
+<p>VRML97 – 一種三維虛擬現實建模語言，Webots 世界檔格式來源。</p>
+<p>Human readable – 人類可讀，表示該檔案格式容易理解。</p>
+<p></p>
+<p>1.A is B that...</p>
+<p>用來解釋 A 是 B 且 B 是什麼，這是一個常見的定義句型。</p>
+<p>例句：</p>
+<p>"A World is a file containing information like..."<br/>→ 「世界是一個包含以下資訊的檔案……」</p>
+<p>2.like</p>
+<p>用來舉例或列出類似的事物。</p>
+<p>例句：</p>
+<p>"...information like where the objects are, what they look like..."<br/>→ 「像是物體的位置、外觀等資訊」</p>
+<p>3.and</p>
+<p>用來連接詞語或句子中的多個項目。</p>
+<p>例句：</p>
+<p>"...the color of the sky, and the definitions of gravity, friction..."<br/>→ 「天空顏色，還有重力、摩擦力的定義」</p>
+<p>4.Therefore</p>
+<p>表示因果關係，通常用來引出結論。</p>
+<p>例句：</p>
+<p>"Therefore, a node may contain sub-nodes."<br/>→ 「因此，一個節點可能包含子節點。」</p>
+<p>5.may</p>
+<p>表示可能性，用來描述不確定的情況。</p>
+<p>例句：</p>
+<p>"A node may contain sub-nodes."<br/>→ 「一個節點可能會包含子節點。」</p>
+<p>6.having</p>
+<p>用來描述具有某種特徵的事物。</p>
+<p>例句：</p>
+<p>"A world is stored in a file having the .wbt extension."<br/>→ 「世界檔案是儲存在具有 .wbt 副檔名的檔案中。」</p>
+<p>7.derived from</p>
+<p>表示某事物來源於或基於某個東西。</p>
+<p>例句：</p>
+<p>"The file format is derived from the VRML97 language."<br/>→ 「檔案格式來源於 VRML97 語言。」</p>
+<p>8.must be</p>
+<p>用來強調必須做某事，是義務或要求。</p>
+<p>例句：</p>
+<p>"The world files must be stored directly in a directory called worlds."<br/>→ 「世界檔案必須直接儲存在名為 worlds 的資料夾中。」</p>
+<p>主要是在講解場地</p>
+<p>調整地板和牆壁大小<br/>在「場景樹」中選擇 RectangleArena，然後調整以下參數：</p>
+<p>floorTileSize：改為 0.25 0.25，讓地板磚塊變小。</p>
+<p>wallHeight：改為 0.05，讓牆壁變矮。</p>
+<p>加入木箱<br/>點選「新增」按鈕，選擇 PROTO nodes (Webots Projects) / objects / factory / containers / WoodenBox (Solid)，在競技場中間會出現一個大箱子。選擇這個箱子，然後調整以下參數：</p>
+<p>size：改為 0.1 0.1 0.1，讓箱子變小。</p>
+<p>translation：改為 0 0 0.05，讓箱子稍微浮起。</p>
+<p>接著，使用複製貼上（Ctrl+C 和 Ctrl+V）來新增兩個箱子，並將它們移動到競技場的不同位置，避免它們都集中在中間。</p>
+<hr/>
+<p><strong>Add an e-puck Robot</strong></p>
+<p>The e-puck is a small robot having differential wheels, 10 LEDs, and several sensors including 8 DistanceSensors and a Camera. In this tutorial we are only interested in using its wheels.</p>
+<p>e-puck 是一個小型機器人，擁有差速輪、10 顆 LED 燈和幾個感測器，包括 8 顆距離感測器和一個相機。在本教程中，我們只會關注它的輪子。我們會在接下來的教程中學習如何使用其他功能。</p>
+<p>主要在講解e-puck機器人</p>
+<p>加入 e-puck 機器人<br/>點選「新增」按鈕，選擇 PROTO nodes (Webots Projects) / robots / mobile / e-puck，這樣就會在競技場中加入一台 e-puck 機器人。</p>
+<p>設定機器人控制程式<br/>在「場景樹」中選擇 e-puck，然後在 controller 欄位中輸入控制程式的名稱，例如 my_controller。這樣，當我們建立控制程式時，機器人就會使用它來控制行為。</p>
+<p></p>
+<p>e-puck - 小型機器人，這是 Webots 中的預設機器人之一。</p>
+<p>differential wheels - 差速輪，兩個輪子的轉速差控制機器人的移動。</p>
+<p>LEDs - 發光二極管，這裡指的是機器人上的燈。</p>
+<p>DistanceSensors - 距離感測器，用來測量機器人與物體的距離。</p>
+<p>PROTO node - 一種 Webots 節點，用來創建可重用的自定義物件。</p>
+<p>Scene Tree - 場景樹，Webots 的節點組織結構。</p>
+<p>real-time - 即時模擬模式。</p>
+<p>mass - 質量，物體的物理屬性之一。</p>
+<p>basicTimeStep - 基本時間步長，用於控制物理模擬的步伐。</p>
+<p>reset - 重置，將模擬恢復到初始狀態。</p>
+<p>simulation - 模擬，指在 Webots 中執行的虛擬環境。</p>
+<p>apply a force - 施加力，用於操控物體的移動。</p>
+<p>ctrl key - 控制鍵，用於進行某些操作的快捷鍵。</p>
+<hr/>
+<p data-pm-slice="1 1 []"><strong>Create a New Controller</strong></p>
+<p>We will now program a simple controller that will just make the robot move forwards. A controller is a program that defines the behavior of a robot. Webots controllers can be written in the following programming languages: C, C++, Java, Python, MATLAB, etc. C, C++ and Java controllers need to be compiled before they can be run as robot controllers. Python and MATLAB controllers are interpreted languages so they will run without being compiled. In this tutorial, we are going to use C as a reference language but all the code snippets are also available in C++, Java, Python and MATLAB. Refer to the language chapter to setup a controller using a different programming language.</p>
+<p>The controller field of a Robot node specifies which controller is currently associated to the robot. Note that the same controller can be used by several robots, but a robot can only use one controller at a time. Each controller is executed in a separate child process usually spawned by Webots. Because they are independent processes, controllers don't share the same address space, and may run on different processor cores.</p>
+<p class="" data-end="273" data-start="42">控制器是一個程式，用來定義機器人的行為。Webots 控制器可以使用以下程式語言編寫：C、C++、Java、Python、MATLAB 等。C、C++ 和 Java 控制器需要編譯後才能作為機器人控制器運行，而 Python 和 MATLAB 控制器是直譯語言，因此不需要編譯就可以運行。在本教程中，我們將使用 C 作為參考語言，但所有的程式碼片段也會提供 C++、Java、Python 和 MATLAB 版本。若要使用其他程式語言設置控制器，請參閱語言章節。</p>
+<p class="" data-end="443" data-start="275">機器人節點（Robot node）的控制器欄位指定了當前與機器人相關聯的控制器。請注意，同一個控制器可以被多個機器人使用，但每次只有一個機器人可以使用同一個控制器。每個控制器都是在一個單獨的子進程中執行，這些子進程通常是由 Webots 啟動的。由於它們是獨立的進程，控制器之間不共享相同的地址空間，並且可能會在不同的處理器核心上運行。</p>
+<p>Controller - 控制器：定義機器人行為的程式。</p>
+<p>Robot node - 機器人節點：Webots 中的一個節點，代表機器人本身。</p>
+<p>Program - 程式：計算機執行的指令集，這裡指的是控制機器人行為的程式。</p>
+<p>Compiled - 編譯：將程式碼轉換為機器能執行的格式。</p>
+<p>Interpreted - 直譯：程式碼不需要編譯，而是由解釋器直接執行。</p>
+<p>Language - 語言：指程式語言，這裡提到 C、C++、Java、Python 和 MATLAB。</p>
+<p>Independent processes - 獨立進程：指每個控制器在不同的進程中運行，互不影響。</p>
+<p>Address space - 地址空間：記憶體中用來儲存程序和資料的區域。</p>
+<p>Processor cores - 處理器核心：處理器中的獨立運算單元。</p>
+<p></p>
+<p>1.We will now - 用來表示即將進行的動作，語氣較為強調未來行動。</p>
+<p>例句：We will now program a simple controller.</p>
+<p>2.that will - 用來表示目的或未來的動作。</p>
+<p>例句：We will now program a simple controller that will just make the robot move forwards.</p>
+<p>3.A controller is a program that - 定義和解釋某事物的結構，這裡是對「控制器」的解釋。</p>
+<p>例句：A controller is a program that defines the behavior of a robot.</p>
+<p>4.can be written in - 表示某事物可以以某種方式來做，這裡用於說明控制器的語言選擇。</p>
+<p>例句：Webots controllers can be written in the following programming languages.</p>
+<p>5.may run - 表示可能發生的狀況或行為。</p>
+<p>例句：...and may run on different processor cores.</p>
+<p>6.is executed in - 描述某事物的運行或執行方式。</p>
+<p>例句：Each controller is executed in a separate child process usually spawned by Webots.</p>
+<p>7.Refer to - 用來表示參考某資料或章節。</p>
+<p>例句：Refer to the language chapter to setup a controller using a different programming language.</p>
+<p></p>
+<p>主要在講解建立控制程式<br/>在 Webots 中，控制程式是用來定義機器人行為的程式。你可以使用 Python、C、C++、Java 等語言來撰寫控制程式。這裡我們以 Python 為例。</p>
+<p>撰寫簡單的前進程式<br/>在 Webots 的控制程式資料夾中，建立一個新的 Python 檔案，命名為 my_controller.py，並輸入以下程式碼：</p>
+<p><strong></strong></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from controller import Robot, Motor
+ 
+TIME_STEP = 64
+MAX_SPEED = 6.28
+ 
+robot = Robot()
+ 
+leftMotor = robot.getMotor('left wheel motor')
+rightMotor = robot.getMotor('right wheel motor')
+ 
+leftMotor.setPosition(float('inf'))
+rightMotor.setPosition(float('inf'))
+ 
+leftMotor.setVelocity(0.1 * MAX_SPEED)
+rightMotor.setVelocity(0.1 * MAX_SPEED)
+ 
+while robot.step(TIME_STEP) != -1:
+    pass
+</pre>
+<h3>Tutorial2</h3>
+<p>在本教學中，我們將學習如何在環境中建立簡單的物件。第一步是建立一顆會與環境互動的球體。我們將探討與節點相關的多個概念：它們的意義、如何建立、如何關聯等。此外，我們還將了解如何設定物理屬性。</p>
+<p>將介紹幾種類型的節點。它們的詳細定義可以在參考手冊中找到。擁有節點圖表將有助於理解節點之間的繼承關係。</p>
+<hr/>
+<p><strong>The Solid Node</strong></p>
+<p>The Solid Node<br/>This subsection introduces the most important base node in Webots: the Solid node, from which many other nodes derive.</p>
+<p>A Solid node represents a rigid body, that is a body in which deformation can be neglected. The distance between any two given points of a rigid body remains constant in time regardless of external forces exerted on it. For example a table, a robot finger phalanx or a wheel are rigid bodies. Soft bodies and articulated objects are not rigid bodies. For example, a rope, a tire, a sponge or an articulated robot arm are not rigid bodies. However, an articulated entity can be broken into several rigid bodies.</p>
+<p>The physics engine of Webots is designed for simulating rigid bodies only. An important step, when designing a simulation, is to break up the various entities into separate rigid bodies.</p>
+<p>To define a rigid body, you will have to create a Solid node. Inside this node you will set up different sub-nodes corresponding to the characteristics of the rigid body. The following figure depicts a rigid body and its sub-nodes. The graphical representation of the Solid node is defined by the Shape nodes populating its children list. The collision bounds are defined in its boundingObject field. The graphical representation and the collision shape are often but not necessarily identical. Finally, the physics field defines if the object belongs to the dynamical or to the static environment. All these sub-nodes are optional, but the physics field needs the boundingObject to be defined.</p>
+<p>這一小節介紹了 Webots 中最重要的基礎節點：<strong>Solid 節點</strong>，許多其他節點都是從它衍生出來的。</p>
+<p>Solid 節點代表一個剛體，也就是一種在模擬中可以忽略變形的物體。剛體中任意兩點之間的距離在時間中是保持不變的，即使有外力施加在上面也是如此。例如：桌子、機器人的指節、或是輪子，這些都是剛體。而軟體（soft bodies）或具有關節的物體則不屬於剛體，比如繩子、輪胎、海綿，或是關節式的機器人手臂就不是剛體。不過，一個有關節的物體可以拆解成數個剛體來處理。</p>
+<p>Webots 的物理引擎專門用來<strong>模擬剛體</strong>。因此，在設計模擬時，一個重要的步驟就是把各個物件拆解成獨立的剛體。</p>
+<p>若要定義一個剛體，你需要建立一個 Solid 節點。在這個節點中，你將設定一些子節點來描述這個剛體的特性。下圖展示了一個剛體及其子節點的結構：</p>
+<p><strong>圖形外觀</strong>（Graphical representation） 是由放在 children 清單中的 Shape 節點 來定義的。</p>
+<p><strong>碰撞邊界</strong>（Collision bounds） 則是由 boundingObject 欄位來設定。</p>
+<p>通常圖形外觀與碰撞形狀是一樣的，但不一定非得相同。</p>
+<p>最後，physics 欄位會決定這個物件是屬於<strong>動態物件</strong>還是<strong>靜態環境</strong>的一部分。</p>
+<p>所有這些子節點都是可選的，但若要使用 physics 欄位，<strong>就必須定義</strong><span> </span>boundingObject。</p>
+<p><img alt="" height="245" src="https://mdecd2025.github.io/hw-41023114/images/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202025-04-16%20220900.png" width="300"/></p>
+<p>Solid node Solid 節點、剛體節點 Webots 中用來定義剛體的節點<br/>Rigid body 剛體 一種不會變形的物體<br/>Deformation 變形 通常是物體在受力後的形狀改變<br/>External force 外力 來自外部施加在物體上的力量<br/>Soft body 軟體 可以變形的物體<br/>Articulated object 關節式物體 有連接部位、可活動的物體<br/>Physics engine 物理引擎 模擬物理行為的程式模組<br/>Simulation 模擬 在電腦中模擬現實情境<br/>Sub-node 子節點 階層式結構中的下層節點<br/>Graphical representation 圖形表示 在 3D 視圖中可看到的外觀<br/>Collision bounds 碰撞邊界 用於物理計算的碰撞區域<br/>boundingObject 邊界物件欄位 定義碰撞邊界用的欄位<br/>children list 子節點清單 包含 Shape 等節點的集合<br/>Shape node 形狀節點 描述物體圖形的節點<br/>physics field 物理欄位 決定是否加入動力模擬<br/>dynamical/static environment 動態/靜態環境 是否會移動（物理互動）的物體</p>
+<p></p>
+<p>1.This subsection introduces...</p>
+<p>用來開始段落、介紹某主題。</p>
+<p>例句：This subsection introduces the most important base node in Webots.</p>
+<p>翻譯：這一小節介紹了 Webots 中最重要的基礎節點。</p>
+<p>2.A Solid node represents...</p>
+<p>主詞 + 動詞 + 補語 → 用來定義或說明某事物的功能。</p>
+<p>例句：A Solid node represents a rigid body.</p>
+<p>翻譯：Solid 節點代表一個剛體。</p>
+<p>3.can be broken into...</p>
+<p>被動語態 + break into，表示可被分成...</p>
+<p>例句：An articulated entity can be broken into several rigid bodies.</p>
+<p>翻譯：關節式物體可以被分成多個剛體。</p>
+<p>4.You will have to...</p>
+<p>未來式 + have to，表示「你必須」。</p>
+<p>例句：You will have to create a Solid node.</p>
+<p>翻譯：你將需要建立一個 Solid 節點。</p>
+<p>5....defined by...</p>
+<p>表示由...定義、構成。</p>
+<p>例句：The graphical representation is defined by the Shape nodes...</p>
+<p>翻譯：圖形表示是由 Shape 節點定義的。</p>
+<p>6....but not necessarily...</p>
+<p>表示「但不一定是…」</p>
+<p>例句：...are often but not necessarily identical.</p>
+<p>翻譯：通常是相同的，但不一定。</p>
+<p>7.All these sub-nodes are optional, but...</p>
+<p>對比句型，用來表達例外或限制。</p>
+<p>例句：All these sub-nodes are optional, but the physics field needs the boundingObject to be defined.</p>
+<p>翻譯：這些子節點都是可選的，但若要使用 physics 欄位，就必須定義 boundingObject。</p>
+<p></p>
+<p>主要在講解</p>
+<p>Solid 節點是 Webots 中最重要的基礎節點之一，代表一個剛體物件。它包含以下子節點：</p>
+<p>Shape：定義物件的外觀。</p>
+<p>boundingObject：定義物件的碰撞邊界。</p>
+<p>physics：定義物件的物理屬性。</p>
+<p>這些子節點是可選的，但如果要讓物件具有物理屬性，必須定義 boundingObject 和 physics。</p>
+<hr/>
+<p><strong>Create a Ball</strong></p>
+<p>We will now add a ball to the simulation. That ball will be modeled as a rigid body as shown in this figure. A Sphere node will be used to define the geometry of our ball.</p>
+<p>Hands-on #4: In the scene tree view, select the last node and press the Add button. In the dialog, open the Bases nodes section and select the Solid node. In the scene tree view, expand the Solid node and select its children field. Add a Shape node to it by using the Add button. Select the appearance field of the Shape node and use the Add button to add a PBRAppearance node.</p>
+<p>1.Add a Sphere node as the geometry field of the newly created Shape node.<br/>2.Expand the PBRAppearance node and change its metalness field to 0 and its roughness field to 1.<br/>3.Add another Sphere node to the boundingObject field of the Solid.<br/>4.Finally add a Physics node to the physics field of the Solid.<br/>5.By modifying the translation field of the Solid node, place the ball in front of the robot (at {0.2, 0, 0.2} for example).<br/>6.Save the simulation.<br/>7.The result is depicted in this figure.</p>
+<p>When the simulation is started, the ball hits the floor. You can move the ball by applying a force to it (ctrl + alt + left-click + drag). The contact points between the ball and the floor can be displayed as cyan lines by enabling the View / Optional Rendering / Show Contact Points menu item.</p>
+<p class="" data-end="142" data-start="74">我們現在要在模擬中加入一顆球。這顆球將會被建模為一個<strong data-end="106" data-start="100">剛體</strong>，如下圖所示。我們將使用<span> </span><code data-end="127" data-start="119">Sphere</code><span> </span>節點來定義這顆球的幾何形狀。</p>
+<p class="" data-end="388" data-start="144"><strong data-end="154" data-start="144">實作 #4：</strong><br data-end="157" data-start="154"/>在<span> </span><strong data-end="168" data-start="159">場景樹視圖</strong><span> </span>中，選取最後一個節點並按下<span> </span><strong data-end="189" data-start="183">新增</strong><span> </span>按鈕。在跳出的對話框中，展開<span> </span><strong data-end="220" data-start="205">Bases nodes</strong><span> </span>區段，然後選擇<span> </span><strong data-end="238" data-start="229">Solid</strong><span> </span>節點。<br data-end="245" data-start="242"/>在場景樹視圖中展開這個 Solid 節點，並選取它的<span> </span><code data-end="282" data-start="272">children</code><span> </span>欄位。接著，按下<span> </span><strong data-end="298" data-start="292">新增</strong><span> </span>按鈕加入一個<span> </span><strong data-end="315" data-start="306">Shape</strong><span> </span>節點。<br data-end="322" data-start="319"/>再選取剛加入的 Shape 節點的<span> </span><code data-end="352" data-start="340">appearance</code><span> </span>欄位，使用新增按鈕加入一個<span> </span><strong data-end="384" data-start="367">PBRAppearance</strong><span> </span>節點。</p>
+<p class="" data-end="618" data-start="390">在 Shape 節點的<span> </span><code data-end="412" data-start="402">geometry</code><span> </span>欄位加入一個<span> </span><strong data-end="430" data-start="420">Sphere</strong><span> </span>節點，作為球的幾何外觀。<br data-end="446" data-start="443"/>展開 PBRAppearance 節點，將<span> </span><code data-end="479" data-start="468">metalness</code><span> </span>欄位改為<span> </span><strong data-end="490" data-start="485">0</strong>，<code data-end="502" data-start="491">roughness</code><span> </span>欄位改為<span> </span><strong data-end="513" data-start="508">1</strong>。<br data-end="517" data-start="514"/>在 Solid 節點的<span> </span><code data-end="545" data-start="529">boundingObject</code><span> </span>欄位中再加入一個<span> </span><strong data-end="565" data-start="555">Sphere</strong><span> </span>節點，用來定義碰撞邊界。<br data-end="581" data-start="578"/>最後，在<span> </span><code data-end="595" data-start="586">physics</code><span> </span>欄位加入一個<span> </span><strong data-end="614" data-start="603">Physics</strong><span> </span>節點。</p>
+<p class="" data-end="697" data-start="620">透過修改 Solid 節點的<span> </span><code data-end="648" data-start="635">translation</code><span> </span>欄位，把球放在機器人前面的位置（例如設為<span> </span><code data-end="685" data-start="670">{0.2, 0, 0.2}</code>）。<br data-end="690" data-start="687"/>儲存這個模擬。</p>
+<p class="" data-end="756" data-start="699">這是你在 Webots 中建立的第一個剛體。</p>
+<p class="" data-end="905" data-start="758">當你開始模擬後，球會落到地板上。你可以透過施加力來移動這顆球（按住<span> </span><code data-end="811" data-start="792">Ctrl + Alt + 左鍵拖曳</code>）。<br data-end="816" data-start="813"/>若你想查看球與地面接觸的點，可以從功能表中點選：<strong data-end="891" data-start="840">View &gt; Optional Rendering &gt; Show Contact Points</strong>，就會以青綠色線條顯示出來。</p>
+<p class="" data-end="905" data-start="758"></p>
+<p class="" data-end="905" data-start="758">Ball 球體 模擬中新增的物件<br/>Rigid body 剛體 不會變形的物體，適合用於物理模擬<br/>Solid node Solid 節點 Webots 中用來定義剛體的節點<br/>Sphere node 球形節點 幾何形狀為球的節點<br/>Shape node 外觀節點 定義圖形外觀<br/>PBRAppearance node 實體外觀節點 用於設定金屬感、粗糙度等外觀屬性<br/>boundingObject 邊界物件欄位 用來定義物理碰撞用的區域<br/>Physics node 物理屬性節點 控制物體是否受重力、摩擦等影響<br/>translation 位移欄位 設定物體在空間中的位置<br/>metalness 金屬感 外觀參數，0 表示非金屬<br/>roughness 粗糙度 外觀參數，1 表示完全粗糙<br/>Apply a force 施加力量 移動物體的方式之一<br/>Contact point 接觸點 物體接觸地面時產生的物理點</p>
+<p class="" data-end="905" data-start="758"></p>
+<p>1.We will now add...</p>
+<p>表示即將執行的操作。</p>
+<p>例句：We will now add a ball to the simulation.</p>
+<p>翻譯：我們現在要在模擬中加入一顆球。</p>
+<p>2.That ball will be modeled as...</p>
+<p>被動語態 + as，用於描述物件如何被建模。</p>
+<p>例句：That ball will be modeled as a rigid body.</p>
+<p>翻譯：這顆球會被建模成一個剛體。</p>
+<p>3.Select the ... and press the Add button.</p>
+<p>指令句型，常見於操作教學中。</p>
+<p>例句：Select the last node and press the Add button.</p>
+<p>翻譯：選取最後一個節點並按下新增按鈕。</p>
+<p>4.Expand ... and change its ... field to ...</p>
+<p>表示進入某節點並修改其欄位。</p>
+<p>例句：Expand the PBRAppearance node and change its metalness field to 0.</p>
+<p>翻譯：展開 PBRAppearance 節點，將 metalness 欄位設為 0。</p>
+<p>5.The result is depicted in this figure.</p>
+<p>被動語態，用於說明結果已被圖示。</p>
+<p>例句：The result is depicted in this figure.</p>
+<p>翻譯：結果如下圖所示。</p>
+<p>6.You can move the ball by...</p>
+<p>by + V-ing，表示透過某動作達成某目的。</p>
+<p>例句：You can move the ball by applying a force to it.</p>
+<p>翻譯：你可以透過施加力量來移動這顆球。</p>
+<p>7.can be displayed by enabling...</p>
+<p>被動語態 + by V-ing，表示可以透過某操作來達成。</p>
+<p>例句：The contact points can be displayed by enabling the View menu...</p>
+<p>翻譯：接觸點可以透過啟用 View 選單來顯示。</p>
+<p></p>
+<p>主要在講解如何建立球體</p>
+<p><strong>1.新增 Solid 節點</strong><br/>在場景樹中選擇最後一個節點，點擊「新增」按鈕，選擇 Base nodes 中的 Solid 節點。</p>
+<p><strong>2.新增 Shape 節點</strong><br/>展開 Solid 節點，選擇 children 欄位，點擊「新增」按鈕，選擇 Shape 節點。</p>
+<p><strong>3.設定外觀</strong><br/>展開 Shape 節點，選擇 appearance 欄位，點擊「新增」按鈕，選擇 PBRAppearance 節點。將 metalness 設為 0，roughness 設為 1。</p>
+<p><strong>4.設定幾何形狀</strong><br/>在 Shape 節點中，選擇 geometry 欄位，點擊「新增」按鈕，選擇 Sphere 節點。將 radius 設為 0.05，subdivision 設為 2。</p>
+<p><strong>5.設定碰撞邊界</strong><br/>在 Solid 節點中，選擇 boundingObject 欄位，點擊「新增」按鈕，選擇 Sphere 節點。將 radius 設為 0.05，subdivision 設為 2。</p>
+<p><strong>6.設定物理屬性</strong><br/>在 Solid 節點中，選擇 physics 欄位，點擊「新增」按鈕，選擇 Physics 節點。</p>
+<p><strong>7.設定位置</strong><br/>在 Solid 節點中，選擇 translation 欄位，將其值設定為 {0.2, 0, 0.2}，將球體放置在機器人前方。</p>
+<p><strong>8.儲存模擬</strong><br/>完成上述步驟後，儲存模擬檔案。</p>
+<hr/>
+<p><strong>Geometries</strong></p>
+<p>To define the ball, we used the Sphere node in two different contexts: for the graphical representation (children) and to define the physical bounds (boundingObject). All Geometry nodes (such as the Sphere node) can be used in a graphical context. However, only a subset of them can be used in a physical context. The nodes chart diagram indicates which nodes are supported in each context.</p>
+<p>We are now going to reduce the size of the Sphere and increase its graphical quality by increasing the number of triangles used to represent it.</p>
+<p>Hands-on #5: For each Sphere node defining the ball, set its radius field to 0.05 and its subdivision field to 2. Refer to the Reference Manual to understand what the subdivision field stands for.</p>
+<p>為了定義這顆球，我們在兩種不同的情境中使用了 Sphere（球體）節點：<br/>一是在圖形呈現（children）中，另一個則是用來定義物理邊界（boundingObject）。<br/>所有的幾何節點（像是 Sphere）都可以用在圖形呈現的情境中。<br/>然而，只有其中一部分的幾何節點可以用在物理模擬的情境中。<br/>你可以參考節點圖（nodes chart diagram），來確認每個節點在哪些情境中是被支援的。</p>
+<p>接下來我們要縮小球的大小，並且提升圖形品質，方法是增加用來呈現球體的三角形數量。</p>
+<p><strong>實作#5</strong></p>
+<p>對每一個定義球體的 Sphere 節點，將：</p>
+<p>radius 欄位設為 0.05，</p>
+<p>subdivision 欄位設為 2。</p>
+<p>若想進一步了解 subdivision 欄位的用途，可以參考官方的 Reference Manual（參考手冊）。</p>
+<p></p>
+<p>Geometry 幾何形狀 通常用來定義 3D 物件的外觀<br/>Sphere node 球體節點 幾何節點之一，用來建立球形物件<br/>Graphical representation 圖形呈現 指物體在 3D 視窗中看到的樣子<br/>BoundingObject 邊界物件 物體的碰撞範圍，為物理模擬用<br/>Physical context 物理情境 用於碰撞、重量、力等模擬計算<br/>Subset 子集合、部分 指從一大類中選出的某幾個<br/>Reduce 減少、降低 常用於尺寸、數量等<br/>Subdivision 分割數、細分數 決定幾何圖形的精細度（三角形數）<br/>Radius 半徑 控制球體的大小<br/>Reference Manual 參考手冊 官方說明文件</p>
+<p></p>
+<p>1.We used the Sphere node in two different contexts.</p>
+<p>表示「我們在兩種不同情境下使用了 Sphere 節點」。</p>
+<p>in [情境] context 是很實用的寫法！</p>
+<p>例句翻譯：我們在兩種不同的情境中使用了 Sphere 節點。</p>
+<p>2.All Geometry nodes can be used in a graphical context.</p>
+<p>can be used：被動語態，表示「可以被使用」。</p>
+<p>例句翻譯：所有幾何節點都可以用在圖形呈現中。</p>
+<p>3.Only a subset of them can be used in a physical context.</p>
+<p>only a subset of：只有其中的一部分。</p>
+<p>例句翻譯：它們當中只有一部分可以用在物理情境中。</p>
+<p>4.We are now going to reduce the size of the Sphere.</p>
+<p>be going to + V：表示未來打算做某事。</p>
+<p>例句翻譯：我們現在要來縮小球體的大小。</p>
+<p>5.Increase its graphical quality by increasing the number of triangles.</p>
+<p>by V-ing：藉由做某事來達成目的。</p>
+<p>例句翻譯：透過增加三角形數量來提升圖形品質。</p>
+<p>6.Set its radius field to 0.05 and its subdivision field to 2.</p>
+<p>指令句常用語法，常見於操作說明中。</p>
+<p>例句翻譯：將半徑欄位設為 0.05、細分欄位設為 2。</p>
+<p></p>
+<hr/>
+<p><strong>DEF-USE Mechanism</strong></p>
+<p>The DEF-USE mechanism allows to define a node in one place and to reuse that definition elsewhere in the scene tree. This is useful to avoid the duplication of identical nodes in world files. Moreover, it also allows users to modify several objects at the same time. Here is how it works: first a node is labeled with a DEF string. Then copies of this node can be reused elsewhere with the USE keyword. Only the fields of the DEF node can be edited, the fields of the USE inherit from the DEF node and cannot be changed. This mechanism is dependent on the order of the nodes in the world file. A DEF node should be defined before any corresponding USE node.</p>
+<p>The two Sphere definitions that we have used earlier to define the ball, are redundant. We will now merge these two Spheres into only once using the DEF-USE mechanism.</p>
+<p>Hands-on #6: Select the first Sphere node (the child of the Shape) in the scene tree view. The field editor of the scene tree view allows you to enter the DEF string.</p>
+<p>Enter BALL_GEOMETRY in this field.<br/>Select the boundingObject field (containing the second Sphere node), and empty it by right clicking the field in the scene tree and choosing the Delete entry in the context menu that pops up.<br/>Then, select the boundingObject field and click on the Add button, and select the USE / BALL_GEOMETRY in the dialog box.<br/>The result is shown in this figure.<br/>Now, changing the radius field of the first Sphere node also modifies its boundingObject.</p>
+<p>For convenience, the boundingObject field also accepts the Shape node (rather than the Sphere node directly). It would be also possible to use the same DEF-USE mechanism at the Shape level as shown in this figure. For now the greatest benefit is being able to also use this Shape directly for graphical purposes. Later this mechanism will turn out to be very useful for some sensors.</p>
+<p>DEF-USE 機制可以讓你在場景樹中的某一處定義一個節點，然後在其他地方重複使用這個定義。<br/>這個機制的好處是可以避免在 world 檔中重複建立相同的節點，而且也能同時修改多個使用相同定義的物件。</p>
+<p>它的運作方式如下：</p>
+<p>1.先使用 DEF 關鍵字替一個節點取一個名稱。</p>
+<p>2.接著，在其他位置可以使用 USE 關鍵字來引用這個節點。</p>
+<p>3.<strong>只有被 DEF 定義的節點的欄位可以被修改</strong>，USE 的節點會繼承 DEF 的設定，不能獨立編輯。</p>
+<p>4.這個機制依賴 world 檔中的節點順序：必須先定義 DEF 節點，才能在後面使用對應的 USE 節點。</p>
+<p>我們之前為球體使用了兩個 Sphere 定義，這是重複的。<br/>現在我們要用 DEF-USE 機制，合併成一個 Sphere 節點來重複使用。</p>
+<p>實作#6</p>
+<ol data-end="739" data-start="507">
+<li class="" data-end="548" data-start="507">
+<p class="" data-end="548" data-start="510">在場景樹中，選取第一個<span> </span><code data-end="530" data-start="522">Sphere</code><span> </span>節點（<code data-end="541" data-start="534">Shape</code><span> </span>的子節點）。</p>
+</li>
+<li class="" data-end="593" data-start="549">
+<p class="" data-end="593" data-start="552">在欄位編輯器中輸入<span> </span><code data-end="567" data-start="562">DEF</code><span> </span>名稱 →<span> </span><strong data-end="592" data-start="573"><code data-end="590" data-start="575">BALL_GEOMETRY</code></strong>。</p>
+</li>
+<li class="" data-end="669" data-start="594">
+<p class="" data-end="642" data-start="597">選取<span> </span><code data-end="616" data-start="600">boundingObject</code><span> </span>欄位（裡面原本有第二個<span> </span><code data-end="637" data-start="629">Sphere</code><span> </span>節點）：</p>
+<p class="" data-end="669" data-start="648">   右鍵 → 選擇「Delete」來清空內容。</p>
+</li>
+<li class="" data-end="739" data-start="670">
+<p class="" data-end="739" data-start="673">再次選取<span> </span><code data-end="694" data-start="678">boundingObject</code><span> </span>欄位 → 按<span> </span><strong data-end="709" data-start="702">Add</strong><span> </span>→ 選擇<span> </span><strong>USE / BALL_GEOMETRY。</strong></p>
+</li>
+</ol>
+<p class="" data-end="838" data-start="741">如圖所示，現在只用一個 Sphere 就能同時定義圖形外觀和碰撞邊界。<br data-end="779" data-start="776"/><strong data-end="838" data-start="779">當你改變第一個 Sphere 的<span> </span><code data-end="806" data-start="798">radius</code><span> </span>時，它的<span> </span><code data-end="828" data-start="812">boundingObject</code><span> </span>也會跟著改變。</strong></p>
+<p class="" data-end="949" data-start="840">另外，為了方便起見，<code data-end="866" data-start="850">boundingObject</code><span> </span>欄位其實也可以接受整個<span> </span><code data-end="886" data-start="879">Shape</code><span> </span>節點（不只限於<span> </span><code data-end="903" data-start="895">Sphere</code>）。<br data-end="908" data-start="905"/>因此也可以將整個<span> </span><code data-end="924" data-start="917">Shape</code><span> </span>節點用<span> </span><code data-end="938" data-start="929">DEF-USE</code><span> </span>重複使用，如圖所示。</p>
+<p class="" data-end="1022" data-start="951">目前這樣做最大的好處是可以直接把這個<span> </span><code data-end="977" data-start="970">Shape</code><span> </span>用來做圖形呈現，<br data-end="989" data-start="986"/>以後我們在設定感測器（sensor）時，也會發現這個機制非常實用。</p>
+<p class="" data-end="1022" data-start="951"></p>
+<p class="" data-end="1022" data-start="951">DEF-USE mechanism 定義與重複使用的機制 Webots 中節點重用的重要工具<br/>Scene tree 場景樹 所有節點階層結構的視覺呈現<br/>Node 節點 Webots 中的基本建構單元<br/>Field editor 欄位編輯器 可編輯節點屬性的地方<br/>BoundingObject 碰撞邊界物件欄位 定義物理碰撞區域<br/>Graphical representation 圖形呈現 物體在 3D 視圖中所呈現的外觀<br/>Context menu 快速選單、右鍵選單 使用者右鍵點擊時出現的功能選單<br/>Convenience 便利性、方便性 在說明某功能使用上較為方便時常見用詞<br/>Inherit 繼承 指 USE 會繼承 DEF 的屬性設定</p>
+<p class="" data-end="1022" data-start="951"></p>
+<p>1.The DEF-USE mechanism allows [動詞片語]</p>
+<p>表示「這個機制可以讓你做…」</p>
+<p>The DEF-USE mechanism allows to define a node…</p>
+<p>DEF-USE 機制可以讓你定義節點…</p>
+<p>2.Only the fields of the DEF node can be edited.</p>
+<p>被動語態 + 限定詞 only，常見於規則說明。</p>
+<p>Only the fields of the DEF node can be edited.</p>
+<p>只有 DEF 節點的欄位可以被修改。</p>
+<p>3.The fields of the USE inherit from the DEF node.</p>
+<p>簡潔地表達繼承關係，用於物件導向、資料繼承等情境。</p>
+<p>The fields of the USE inherit from the DEF node.</p>
+<p>USE 的欄位會繼承 DEF 的設定。</p>
+<p>4.A DEF node should be defined before any corresponding USE node.</p>
+<p>should be + 過去分詞：表示應該要做某事的被動句型。</p>
+<p>A DEF node should be defined before any corresponding USE node.</p>
+<p>DEF 節點應該要在對應的 USE 節點之前定義好。</p>
+<p>5.Now, changing the radius field... also modifies its boundingObject.</p>
+<p>Now, + V-ing：現在做某事會產生什麼結果。</p>
+<p>Now, changing the radius field also modifies its boundingObject.</p>
+<p>現在，改變半徑也會同時改變碰撞邊界。</p>
+<p></p>
+<p>主要在講解DEF-USE機制</p>
+<p class="" data-end="1650" data-start="1623">為了減少節點重複，我們可以使用 DEF-USE 機制。</p>
+<ol data-end="1880" data-start="1652">
+<li class="" data-end="1760" data-start="1652">
+<p class="" data-end="1760" data-start="1655"><strong data-end="1668" data-start="1655">設定 DEF 標籤</strong><br data-end="1671" data-start="1668"/>在場景樹中，選擇<span> </span><code data-end="1690" data-start="1683">Shape</code><span> </span>節點，展開它，找到<span> </span><code data-end="1711" data-start="1701">geometry</code><span> </span>欄位，選擇<span> </span><code data-end="1726" data-start="1718">Sphere</code><span> </span>節點，將<span> </span><code data-end="1737" data-start="1732">DEF</code><span> </span>欄位設定為<span> </span><code data-end="1759" data-start="1744">BALL_GEOMETRY</code>。</p>
+</li>
+<li class="" data-end="1880" data-start="1762">
+<p class="" data-end="1880" data-start="1765"><strong data-end="1778" data-start="1765">使用 USE 標籤</strong><br data-end="1781" data-start="1778"/>在場景樹中，選擇<span> </span><code data-end="1800" data-start="1793">Solid</code><span> </span>節點，展開它，找到<span> </span><code data-end="1827" data-start="1811">boundingObject</code><span> </span>欄位，右鍵點擊，選擇「刪除」。然後，點擊「新增」按鈕，選擇<span> </span><code data-end="1879" data-start="1858">USE / BALL_GEOMETRY</code>。</p>
+</li>
+</ol>
+<p class="" data-end="1948" data-start="1882">這樣，當你修改<span> </span><code data-end="1905" data-start="1890">BALL_GEOMETRY</code><span> </span>的屬性時，所有使用<span> </span><code data-end="1937" data-start="1916">USE / BALL_GEOMETRY</code><span> </span>的節點都會同步更新。</p><h3>Tutorial3</h3>
+<p>The aim of this tutorial is to familiarize yourself with some nodes related to the graphical rendering. Good looking simulations can be created very quickly when these nodes are used adequately. A good graphics quality does not only enhance the user's experience, it is also essential for simulations where robots perceive their environment (camera image processing, line following, etc.).</p>
+<p>這個教學的目的是讓你熟悉一些跟圖形渲染相關的節點。只要善用這些節點，就能很快做出視覺效果不錯的模擬畫面。畫面品質好不只會讓使用者體驗更好，對於那些需要靠影像來感知環境的模擬（像是攝影機影像處理、循線等等）來說，也非常重要。</p>
+<hr/>
+<p><strong>Light</strong></p>
+<p>Lights The lighting of a world is determined by Light nodes and the Background . There are three types of light nodes: the DirectionalLight, the PointLight and the SpotLight. A DirectionalLight simulates a light which is infinitely far (ex: the sun), a PointLight simulates light emitted from a single point (ex: a light bulb), and a SpotLight simulates a conical light (ex: a flashlight). This figure shows a comparison between them. Each type of light node can cast shadows.</p>
+<p>一個場景的光線是由 Light 節點和背景來決定的。Light 節點有三種類型：DirectionalLight（方向光）、PointLight（點光源）和 SpotLight（聚光燈）。</p>
+<p>DirectionalLight 模擬的是從無限遠處照射過來的光（例如：太陽）。</p>
+<p>PointLight 則是從某個點發出來的光（例如：電燈泡）。</p>
+<p>SpotLight 則是錐形照射的光（例如：手電筒）。</p>
+<p> </p>
+<p>lighting 照明、光線配置，指整個場景的光影效果。<br/>determined by 由...決定，常用於說明某件事的因素或來源。<br/>Light nodes 燈光節點，是 Webots 中用來產生光源的物件。<br/>Background 背景，這裡指模擬環境的背景會影響整體照明效果。<br/>DirectionalLight 方向光，模擬來自遠處（如太陽）的平行光。<br/>PointLight 點光源，模擬從一個點向四周發射的光（如燈泡）。<br/>SpotLight 聚光燈，模擬錐形範圍內的光（如手電筒）。<br/>simulate 模擬、模仿，是模擬軟體常見的術語。<br/>cast shadows 投影，意指該光源會產生陰影效果。<br/>Reference Manual 參考手冊，通常指官方文件或說明書。</p>
+<p></p>
+<p>1.The lighting of a world is determined by Light nodes and the Background.</p>
+<p>句型結構：被動語態（is determined by）</p>
+<p>主詞：The lighting of a world（這個世界的照明）</p>
+<p>動詞：is determined（被決定）</p>
+<p>介詞片語：by Light nodes and the Background（由光源節點和背景決定）</p>
+<p>用來強調「誰」或「什麼」決定了照明效果，是科技文常見句型。</p>
+<p>2.There are three types of light nodes: the DirectionalLight, the PointLight and the SpotLight.</p>
+<p>句型結構：There are + 名詞（用來說明有某些東西存在）</p>
+<p>適合用來介紹種類、列表或分類。</p>
+<p>3.A DirectionalLight simulates a light which is infinitely far.</p>
+<p>文法重點：</p>
+<p>which is infinitely far 是形容詞子句，用來修飾「light」</p>
+<p>infinitely 為副詞，修飾形容詞 far，表示「非常遠」。</p>
+<p>常見的定義型句式，用來描述某個東西的作用或特性。</p>
+<p>4.Each type of light node can cast shadows.</p>
+<p>句型結構：助動詞 can + 原形動詞（cast）→ 表示能力</p>
+<p>用來說明這些光源節點有什麼功能。</p>
+<p>5.You can find their complete documentation in the Reference Manual.</p>
+<p>句型結構：can + find（表達能力/可能）</p>
+<p>是一種常見的指引說法，鼓勵讀者去查閱手冊。</p>
+<hr/>
+<p><strong>Modify the Appearance of the Walls</strong></p>
+<p>Modify the Appearance of the Walls<br/>The aim of this subsection is to color the walls in blue.</p>
+<p>The Appearance and PBRAppearance nodes of the Shape node determine the graphical appearance of the object. Among other things, these nodes are responsible for the color and texture of objects.</p>
+<p>Prefer PBRAppearances for a better rendering as shown in the following comparison.</p>
+<p>Hands-on #2: In the Shape node representing graphically the first wall, add a PBRAppearance node to the appearance field.</p>
+<p>Set its baseColor field to blue using the color selector.<br/>Set its metalness field to 0 using the field editor.<br/>Finally, set its roughness field to 0.5 using the field editor.<br/>If the DEF-USE mechanism of the previous tutorial has been correctly implemented, all the walls should turn blue.</p>
+<p>Add an Existing Appearance to the Ball<br/>A number of pre-defined PBRAppearance are provided in the Webots release.</p>
+<p>Hands-on #3: Add a pre-defined PBRAppearance</p>
+<p>Select the appearance field and remove the previously added node. To do this, either press the "delete" button on your keyboard or right-click on the field and select "delete" from the menu. The field should now say "appearance NULL" instead of "appearance PBRAppearance".<br/>Double-click on the field again, then navigate to PROTO nodes (Webots Projects), then appearances and select OldSteel (PBRAppearance).</p>
+<p></p>
+<p>修改牆壁的外觀<br/>這一小節的目標是把牆壁改成藍色的。</p>
+<p>在 Webots 中，Shape 節點裡的 Appearance 跟 PBRAppearance 這兩個節點會決定物件的外觀。像是顏色、材質（紋理）等等都是靠它們設定的。</p>
+<p>為了讓畫面更真實，建議你使用 PBRAppearance，下面這張圖就展示了兩者的差別。</p>
+<p></p>
+<p>實做 #2：讓第一面牆變藍色<br/>找到用來顯示第一面牆的 Shape 節點，在它的 appearance 欄位加上一個 PBRAppearance 節點。</p>
+<p>把 baseColor（底色）設成藍色，可以用顏色選擇器來設。</p>
+<p>把 metalness（金屬感）設成 0，用欄位編輯器改。</p>
+<p>把 roughness（粗糙度）設成 0.5，也是一樣用欄位編輯器改。</p>
+<p>如果你有按照前一個教學設定好 DEF-USE 機制，那麼只要改一面牆，其他牆也會一起變藍。</p>
+<p>##給球體加上已經做好的外觀<br/>Webots 裡面其實有一堆預設好的 PBRAppearance，可以直接拿來用。</p>
+<p>實做 #3：套用一個預設的 PBRAppearance<br/>先選到球體的 appearance 欄位，刪掉原本加的節點。可以按鍵盤上的 delete，或者右鍵點選「delete」。</p>
+<p>成功刪除的話，欄位會從「appearance PBRAppearance」變成「appearance NULL」。</p>
+<p>接著再雙擊這個欄位，然後依序點進：</p>
+<p>PROTO nodes (Webots Projects) → appearances → 選 OldSteel (PBRAppearance)。</p>
+<p></p>
+<p><br/>Appearance / PBRAppearance 控制物件的外觀樣式，PBRAppearance 提供更真實的渲染效果。<br/>Shape node Webots 中用來表示物體形狀的節點。<br/>baseColor 物件的底色。<br/>metalness 金屬感，用數值表達材質像不像金屬（0 = 非金屬，1 = 金屬）。<br/>roughness 粗糙程度，數值越高越不光滑。<br/>field editor 欄位編輯器，用來改節點的屬性。<br/>color selector 顏色選擇器，點選後可選顏色。<br/>appearance NULL 表示目前沒有設定 appearance。<br/>PROTO node 預先定義好的節點，可以重複使用。<br/>DEF-USE 機制 Webots 中讓一個節點可以重複使用的機制。</p>
+<p></p>
+<p>1.The aim of this subsection is to...</p>
+<p>結構：主詞 + be 動詞 + to V</p>
+<p>用來說明某段教學的目的，很常見於技術文件。</p>
+<p>2.Among other things, these nodes are responsible for...</p>
+<p>表達「除了其他功能外，這些節點的責任是...」</p>
+<p>be responsible for 表示「負責…」、「控制…」</p>
+<p>3.Set its baseColor field to blue using the color selector.</p>
+<p>這是一種常見的指令句，用動詞原形開頭（Set），常見於說明手冊。</p>
+<p>using + 工具 → 表示用什麼工具去完成動作。</p>
+<p>4.If the DEF-USE mechanism... has been correctly implemented...</p>
+<p>現在完成式被動語態：has been + 過去分詞</p>
+<p>表示某個設定是否已經正確完成。</p>
+<p>5.Select the appearance field and remove...</p>
+<p>這類句子都是指令式，直接用動詞原形（Select, Remove）開頭，常見於步驟教學。</p>
+<hr/>
+<p data-pm-slice="0 0 []"><strong>Add a Texture from Disk</strong></p>
+<p>Add a Texture from Disk The aim of this subsection is to apply a locally available texture to the ball. A texture on a rolling object can help to appreciate its movement. Hands-on #4: add a locally available texture to the ball. Download the texture available here and save it to your disk. Remove the previously added node from the appearance field and add a PBRAppearance node instead. Add an ImageTexture node to the baseColorMap field of the PBRAppearance node. Add an item to the ImageTexture's url field using the Add button. Then set the value of the newly added url item using the "Select" button. Follow the path to the location where you saved the texture and select it. The texture URLs must be defined either relative to the worlds directory of your project directory or relative to the default project directory WEBOTS_HOME/projects/default/worlds. Open the red_brick_wall.jpg texture in an image viewer while you observe how it is mapped onto the Sphere node in Webots. Textures are mapped onto Geometry nodes according to predefined UV mapping functions described in the Reference Manual. A UV mapping function maps a 2D image representation to a 3D model.</p>
+<p></p>
+<p>這一小節的目的是把本機電腦上的材質圖貼到球體上。<br/>球體有材質圖的話，當它在滾動時，你會更容易看出它的動作。</p>
+<p>實作 #4：給球體加上一張本地的材質貼圖<br/>先下載這裡提供的材質圖，然後把它存到你的電腦上。</p>
+<p>到 appearance 欄位，把之前加的節點刪掉，改成加一個 PBRAppearance 節點。</p>
+<p>在這個 PBRAppearance 裡的 baseColorMap 欄位，加一個 ImageTexture 節點。</p>
+<p>點一下 ImageTexture 的 url 欄位，用「Add」按鈕新增一個項目。</p>
+<p>新增完以後，按「Select」按鈕，選取你剛才下載的圖片。</p>
+<p>找到你存放圖片的資料夾，選取那張圖片。</p>
+<p>小提醒：這個圖片的網址（URL）一定要是相對於你的 world 資料夾，或者是相對於 Webots 的預設資料夾：WEBOTS_HOME/projects/default/worlds。</p>
+<p>接著，你可以在圖像檢視器中打開這張 red_brick_wall.jpg 圖片，一邊觀察它是怎麼被貼到球體（Sphere node）上的。</p>
+<p>貼圖是怎麼運作的？<br/>Webots 會根據預先定義好的 UV mapping 函數，把 2D 的圖片貼到 3D 物件上。</p>
+<p>UV mapping 就是把一張平面圖片「攤平」貼到 3D 模型表面的技術，詳細的說明可以看參考手冊。</p>
+<p></p>
+<p><br/>texture 材質圖、貼圖，用來給物件表面加上圖案或細節。<br/>locally available 本機可用的，表示檔案已經存在於你的電腦中。<br/>apply 套用（某個設定、圖案等）。<br/>rolling object 滾動中的物體（如球）。<br/>ImageTexture Webots 中用來載入圖片貼圖的節點。<br/>url field 圖片的位置（網址或路徑），可以是相對路徑。<br/>baseColorMap 貼圖的位置，會貼在物件的底色上。<br/>relative to 相對於…（用於說明檔案路徑的定位）。<br/>UV mapping 把 2D 圖片對應到 3D 模型的技術。<br/>WEBOTS_HOME Webots 的安裝根目錄（系統預設資料夾）。</p>
+<p></p>
+<p>1.The aim of this subsection is to...</p>
+<p>句型結構：主詞 + be + to V</p>
+<p>用來說明這段內容的目標或任務。</p>
+<p>2.can help to appreciate its movement</p>
+<p>help to V 是常見結構，表示「幫助你能...」</p>
+<p>appreciate 在這裡不是「感激」，而是「看得出來、欣賞」。</p>
+<p>3.Follow the path to...</p>
+<p>這是常見的操作指令句，叫使用者去找某個路徑或資料夾。</p>
+<p>4.Textures are mapped onto...</p>
+<p>被動語態：Textures are mapped（貼圖被套用到…上）</p>
+<p>技術說明中常見的語態，用來解釋系統自動處理的事情。</p>
+<p>5.described in the Reference Manual</p>
+<p>過去分詞當形容詞使用，說明「被描述於參考手冊中」。</p>
+<hr/>
+<p><strong>Rendering Options</strong></p>
+<p>Rendering Options Webots offers several rendering modes available in the View menu. Hands-on #5: View the simulation in wireframe mode by using the View / Wireframe Rendering menu item. Then restore the plain rendering mode: View / Plain Rendering. Others rendering features can be helpful: View Coordinates systems: View / Optional Rendering / Show Coordinates System ctrl-F1 View distance sensor rays: View / Optional Rendering / Show DistanceSensor Rays ctrl-F10</p>
+<p></p>
+<p>Webots 提供了幾種不同的渲染模式，你可以從 View（檢視）選單中切換。</p>
+<p>實作 #5：切換線框模式<br/>到選單中點選：View / Wireframe Rendering，就可以切換成 線框模式（看起來像只有線條輪廓的畫面）。</p>
+<p>想要恢復正常顯示，選擇：View / Plain Rendering。</p>
+<p>除了這些，還有其他實用的渲染功能可以幫助你觀察模擬：</p>
+<p>顯示座標系統：View / Optional Rendering / Show Coordinates System（快捷鍵：Ctrl + F1）</p>
+<p>顯示距離感測器的光線：View / Optional Rendering / Show DistanceSensor Rays（快捷鍵：Ctrl + F10）</p>
+<p></p>
+<p>1.Webots offers several rendering modes...</p>
+<p>offer + 受詞：提供...</p>
+<p>用來介紹功能是很常見的句型。</p>
+<p>2.Hands-on #5: View the simulation in wireframe mode...</p>
+<p>指令句：直接用動詞原形（View）開頭，常見於教學手冊。</p>
+<p>in wireframe mode：用介系詞 in 表示「以某種模式」。</p>
+<p>3.Then restore the plain rendering mode...</p>
+<p>restore：恢復，這裡用來指切換回預設顯示方式。</p>
+<p>4.Others rendering features can be helpful:</p>
+<p>正確寫法應該是 Other rendering features（語法上這是小錯誤，other 沒有 s）</p>
+<p>can be helpful：可以很有幫助，常見於說明提示中。</p>
+<p>5.Show Coordinates System ctrl-F1</p>
+<p>命令 + 快捷鍵：這種格式在教學說明中很常見，用來告知操作與快捷鍵對應方式。</p><h1>Homework</h1>
 <p>作業 (30%)</p>
 <p>HW1 (5%): <span style="background-color: #ffff00;">建立由 Box 組成的平面四連桿機構 Webots 模擬場景</span></p>
 <p style="padding-left: 30px;">part1:</p>
@@ -347,7 +824,8 @@ if __name__ == "__main__":
 <p></p>
 <p>HW1 (5%): <span style="background-color: #ffff00;">建立由 Box 組成的平面四連桿機構 Webots 模擬場景</span></p>
 <p>操作影片標題: 國立虎尾科技大學 - 機械設計工程系 - cd2025 HW1 - 學員學號</p>
-<p></p><h2>HW2</h2>
+<p></p>
+<h2>HW2</h2>
 <p>繪製檔案轉obj</p>
 <p>檔案：<a href="/downloads/split_parts.7z">fourbar obj</a></p>
 <p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/DUMgoqvI5jU" width="560"></iframe></p>
@@ -378,7 +856,8 @@ if __name__ == "__main__":
 <p>心得：這次作業是使用自己所畫的圖檔，導入webots做使用，在這之前需要先將檔案會成obj，一開始我是使用<span class="OYPEnA font-feature-liga-off font-feature-clig-off font-feature-calt-off text-decoration-none text-strikethrough-none">solvespace直接匯出導入webots後，發現變超級大的，原來webots所使用的單位是m公尺，所以我們所繪製的圖與變成了m公尺，後來才得知是需要使用split_stl_to_obj_scale2 這個工具，轉出轉換單位的obj才得以解決。</span></p>
 <p>HW2 (5%): <span style="background-color: #ffff00;">建立由 CAD 繪製零件組成的平面四連桿機構 Webots 模擬場景</span></p>
 <p>操作影片標題: 國立虎尾科技大學 - 機械設計工程系 - cd2025 HW2 - 學員學號</p>
-<p></p><h2>HW3</h2>
+<p></p>
+<h2>HW3</h2>
 <p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/2FHkLTmIFPo" width="560"></iframe></p>
 <p></p>
 <p><span>作業檔案：</span><a href="/downloads/basketball shoot webots.zip">basketball shoot webots.zip</a></p>
@@ -438,7 +917,8 @@ if __name__ == "__main__":
 <p>作業檔案：<a href="/downloads/basketball shoot webots.zip">basketball shoot webots.zip</a></p>
 <p>HW3 (20%):<span style="background-color: #ffff00;">建立 Webots 桌上籃球遊戲機模擬系統</span></p>
 <p>操作影片標題: 國立虎尾科技大學 - 機械設計工程系 - cd2025 HW3 - 學員學號</p>
-<p></p><h1>Midterm</h1>
+<p></p>
+<h1>Midterm</h1>
 <p>各週進度:<span>可攜更改python 313、學員名單、小組名單、四連桿繪製組裝</span></p>
 <p>各週網頁內容:<a href="https://mdecd2025.github.io/hw-41223230/content/task1.html">task1</a>、<a href="https://mdecd2025.github.io/hw-41223230/content/list.html">task1 list</a>、<a href="https://mdecd2025.github.io/hw-41223230/content/task2.html">task2</a>、<a href="https://mdecd2025.github.io/hw-41223230/content/task4.html">task4</a></p>
 <p>期中心得:上完九週的課程，個人覺得這門課比上一門課困難許多，而且目前作業進度落後，需要多加跟上。</p>
@@ -466,14 +946,16 @@ if __name__ == "__main__":
 <p>過程：<br/>1.首先我們在做exam1前要先去solvespace內畫出我們除了起始角30度以外的角度，繪畫完後得到我們link1為30度、limk2為41.79度、link3為130.6度。<br/>2.這三個角度轉為弳度為0.523599、0.729373、2.2794<br/>3.這次作業使用HW1的檔案下去做修改<br/>4.首先展開joint1裡面link1的rotation內的angle改為0.523599<br/>5.再來是展開joint2裡面link2的rotation內的angle改為0.724137<br/>6.最後展開joint3裡面link3的rotation內的angle改為2.2794<br/>7.回到link2的children，再加入一個pose，展開裡面的translation XYZ改為0.3、0.2、0；pose內children加入shape<br/>8.shape內的geometry加入box，將size XYZ改為0.1、0.3、0.1<br/>9.最後儲存，開啟模擬成功<br/>心得：<br/>這次的exam1，使用先前HW1下去做更改，一開始一個一找要更改的部分，前後約使用1個小時，然後成功後再錄影，錄完約6分鐘，完整地做完後對於整體架構又更加理解。</p>
 <p></p>
 <p>Exam1 (10%): 建立 Webots 基本物件模擬場景</p>
-<p>操作影片標題: 國立虎尾科技大學 - 機械設計工程系 - cd2025 Exam1 - 學員學號</p><h2>Exam2</h2>
+<p>操作影片標題: 國立虎尾科技大學 - 機械設計工程系 - cd2025 Exam1 - 學員學號</p>
+<h2>Exam2</h2>
 <p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/-Ep97y43Vko" width="560"></iframe></p>
 <p></p>
 <p>考試檔案：<a href="/downloads/slvs.7z">slvs</a>、<a href="/downloads/webots.7z">webots</a></p>
 <p>過程<br/>1.首先先計算主動桿改為1.30m時，固定桿和從動桿為多少；最後得出固定桿3.25m、從動桿為1.95m和2.925m<br/>2.依照這個尺寸在solvespace繪製線架構，並求出起始角以外的角度；<br/>3.繪製完線架構後，開始繪製新的shape，並進行組裝<br/>4.全部繪製、組裝完後，使用split_stl_to_obj_scale2.py這個程式去匯出obj<br/>5.結束後打開webots開始設置，流程和HW2一樣，完成後開啟模擬檢查是否正確<br/>心得<br/>在這次的作業讓我深深體會到第一步錯就會導致後面就全錯，由於一開始的線架構我將原點設置在中間，並不是設置在最左邊，所以導致在設置joint4的jointparameters內的anchor無法設置正確，最後只好重新繪製線架構和組裝在繪出新的obj再做一次，得以完成。</p>
 <p></p>
 <p>Exam2 (10%): 利用 CAD 零組件建立模擬場景</p>
-<p>操作影片標題: 國立虎尾科技大學 - 機械設計工程系 - cd2025 Exam2 - 學員學號</p><h2>Exam3</h2>
+<p>操作影片標題: 國立虎尾科技大學 - 機械設計工程系 - cd2025 Exam2 - 學員學號</p>
+<h2>Exam3</h2>
 <p>Exam3-1</p>
 <p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/qYnA66lMfek" width="560"></iframe></p>
 <p>Exam3-2</p>
@@ -521,7 +1003,8 @@ if __name__ == "__main__":
 <p style="padding-left: 30px;"><span>籃框架被配置在一定範圍內, 可隨機慢速前進、後退及左右擺動, 投籃機構系統帶有一定數量的籃球, 被配置在可自由移動的輪車上.</span></p>
 <p style="padding-left: 30px;"><span>操作者可利用鍵盤特定按鍵控制投籃輪車的移動並發射投籃, 每投出一球後系統透過記分板進行計分, 並由送球機構進行補球或移動輪車取球, 遊戲可進行至全部數量籃球投完為止.</span></p>
 <p>請將期末協同專案執行過程、內容與心得, 製作成影片，配合字幕上傳至 Youtube 後嵌入各階段的期末報告頁面中.</p>
-<p>影片標題: <span style="background-color: #ffff00;">國立虎尾科技大學 - 機械設計工程系 - cd2025 期末報告 - 學員學號 - 各階段影片主題<br/></span></p><h2>shooter youbots</h2>
+<p>影片標題: <span style="background-color: #ffff00;">國立虎尾科技大學 - 機械設計工程系 - cd2025 期末報告 - 學員學號 - 各階段影片主題<br/></span></p>
+<h2>shooter youbots</h2>
 <p></p>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from controller import Robot, Keyboard  # 匯入 Webots 控制所需的 Robot 和 Keyboard 類別
 
@@ -620,7 +1103,8 @@ while robot.step(timestep) != -1:
             key_pressed['v'] = False  # V 鍵已放開
 </pre>
 <p><span></span></p>
-<p><span>在原本的城市當中是以M和K作為發射和回復，但我個人覺得有點不習慣，所以就改成了F和V</span></p><h2>supervisor Robots</h2>
+<p><span>在原本的城市當中是以M和K作為發射和回復，但我個人覺得有點不習慣，所以就改成了F和V</span></p>
+<h2>supervisor Robots</h2>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from controller import Supervisor, Keyboard  # 匯入 Webots 的 Supervisor 和鍵盤控制模組
 import time                                   # 匯入時間模組，用於記錄與計時
 import random                                 # 匯入隨機模組，用於顏色和命名
@@ -863,7 +1347,8 @@ while supervisor.step(timestep) != -1:
             current_tracked_def = None
 </pre>
 <p><span></span></p>
-<p><span>在這程式當中我將原本的A鍵給球變成R鍵給球，然後還有先前的shooter youbots的發射鍵改成F，所以在這邊的M也需要改成F，以免在原本執行上出問題。</span></p><h2>stand youbots</h2>
+<p><span>在這程式當中我將原本的A鍵給球變成R鍵給球，然後還有先前的shooter youbots的發射鍵改成F，所以在這邊的M也需要改成F，以免在原本執行上出問題。</span></p>
+<h2>stand youbots</h2>
 <p></p>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from controller import Robot, Keyboard  # 匯入 Webots 提供的 Robot 與 Keyboard 類別
 
@@ -997,7 +1482,8 @@ while robot.step(timestep) != -1:  # 每次時間步進（直到模擬結束）
         set_wheel_velocity(0, 0, 0, 0)
 </pre>
 <p><span></span></p>
-<p><span>我將原本控制第二台車的按鍵EDSX 改成遊戲常用的WDAS，這樣是能讓移動上更加直覺。</span></p><h2>counter supervisor</h2>
+<p><span>我將原本控制第二台車的按鍵EDSX 改成遊戲常用的WDAS，這樣是能讓移動上更加直覺。</span></p>
+<h2>counter supervisor</h2>
 <p></p>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from controller import Supervisor
 
@@ -1079,7 +1565,8 @@ while supervisor.step(timestep) != -1:
     set_display(supervisor, score)  # 更新七段顯示器的分數顯示
 </pre>
 <p></p>
-<p></p><h1>Brython</h1>
+<p></p>
+<h1>Brython</h1>
 <p><button id="add1to100">1 add to 100</button></p>
 <!-- 導入 brython 程式庫 -->
 <p>

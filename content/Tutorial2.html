@@ -1,0 +1,406 @@
+<!DOCTYPE html><html>
+        <head>
+        <title>cd_hw</title>
+        <meta charset="utf-8">
+<meta property="head" content="H3">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/icomoon/style.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/bootstrap.min.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/magnific-popup.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/jquery-ui.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/owl.carousel.min.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/owl.theme.default.min.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/bootstrap-datepicker.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/flaticon/font/flaticon.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/aos.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/style.css">
+        <link rel="shortcut icon" href="./../cmsimde/static/favicons.png">
+        
+        <style type='text/css'>
+            .site-section {
+            background-color: #FFFF;
+            padding: 40px 40px;
+            }
+            body > div > div.dropdown.open {
+                display: block;
+            }
+        </style>
+    
+        <!-- <script src="./../cmsimde/static/jquery.js"></script> -->
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+        <script src="../cmsimde/static/chimper/js/jquery-3.3.1.min.js"></script>
+        <link rel="stylesheet" href="./../cmsimde/static/tipuesearch/css/normalize.min.css">
+        <script src="./../cmsimde/static/tipuesearch/tipuesearch_set.js"></script>
+        <script src="tipuesearch_content.js"></script>
+        <link rel="stylesheet" href="./../cmsimde/static/tipuesearch/css/tipuesearch.css">
+        <script src="./../cmsimde/static/tipuesearch/tipuesearch.js"></script>
+        <!-- for Wink3 客製化關閉 -->
+        <!--
+        <link rel="stylesheet" type="text/css" href="./../cmsimde/static/winkPlayer.css" />
+        <script type="text/javascript" src="./../cmsimde/static/winkPlayer.js"></script>
+        -->
+        <script>
+            /* original tipuesearch
+            $(document).ready(function() {
+                 $('#tipue_search_input').tipuesearch();
+            });
+            */
+            // customed doSearch
+            function doSearch() {
+                $('#tipue_search_input').tipuesearch({
+                    newWindow: true, 
+                    minimumLength: 2,
+                    wholeWords: false, // for search 中文
+                });
+            }
+            $(document).ready(doSearch);
+        </script>
+        
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shCore.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushBash.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushDiff.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushJScript.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushJava.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushPython.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushSql.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushHaxe.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushXml.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushPhp.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushPowerShell.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushLua.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushMojo.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushWbt.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCpp.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCss.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCSharp.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushDart.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushRust.js"></script>
+<link type="text/css" rel="stylesheet" href="./../cmsimde/static/syntaxhighlighter/css/shCoreDefault.css"/>
+<script type="text/javascript">SyntaxHighlighter.all();</script>
+<!-- 暫時不用
+<script src="./../cmsimde/static/fengari-web.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/Cango-13v08-min.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/CangoAxes-4v01-min.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/gearUtils-05.js"></script>
+-->
+<!-- for Brython 暫時不用
+<script src="https://scrum-3.github.io/web/brython/brython.js"></script>
+<script src="https://scrum-3.github.io/web/brython/brython_stdlib.js"></script>
+-->
+<style>
+img.add_border {
+    border: 3px solid blue;
+}
+</style>
+
+</head>
+<body>
+<div class='container'><nav>
+        
+    <div class="site-wrap">
+
+    <div class="site-mobile-menu">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+    
+            <header class="site-navbar py-4 bg-white" role="banner">
+              <div class="container">
+                <div class="row align-items-center">
+                <h1>cd2025  協同產品實習41223230網站</h1>
+                <div class="pl-4">
+                    <form>
+                    <input type="text" placeholder="Search" name="q" id="tipue_search_input" pattern=".{2,}" title="At least 2 characters" required>
+                    </form>
+                </div>
+                  <!-- <div class="col-11 col-xl-2">
+                    <h1 class="mb-0 site-logo"><a href="index.html" class="text-black h2 mb-0">cd2025  協同產品實習41223230網站</a></h1> 
+                  </div>
+                  -->
+                  <div class="col-12 col-md-10 d-none d-xl-block">
+                    <nav class="site-navigation position-relative text-right" role="navigation">
+    <ul class='site-menu js-clone-nav mr-auto d-none d-lg-block'>
+                        <li class="active has-children"><a href="index.html">Home</a>
+                        <ul class="dropdown">
+                            <li><a href="sitemap.html">SMap</a></li>
+                            <li><a href="./../reveal/index.html">reveal</a></li>
+                            <li><a href="./../blog/index.html">blog</a></li>
+                        </ul>
+                      </li>
+                     <li class='has-children'><a href='About.html'>About</a><ul class='dropdown'><li><a href='repo.html'>repo</a></li></ul><li class='has-children'><a href='Tasks.html'>Tasks</a><ul class='dropdown'><li class='has-children'><a href='task1.html'>task1</a><ul class='dropdown'><li><a href='list.html'>list</a></li></ul><li><a href='task2.html'>task2</a><li><a href='task3.html'>task3</a><li><a href='task4.html'>task4</a><li><a href='task5.html'>task5</a><li class='has-children'><a href='task6.html'>task6</a><ul class='dropdown'><li><a href='Tutorial1.html'>Tutorial1</a><li><a href='Tutorial2.html'>Tutorial2</a><li><a href='Tutorial3.html'>Tutorial3</a></li></li></ul></ul><li class='has-children'><a href='Homework.html'>Homework</a><ul class='dropdown'><li><a href='HW1.html'>HW1</a><li><a href='HW2.html'>HW2</a><li><a href='HW3.html'>HW3</a></li></ul><li><a href='Midterm.html'>Midterm</a><li class='has-children'><a href='Exam.html'>Exam</a><ul class='dropdown'><li><a href='Exam1.html'>Exam1</a><li><a href='Exam2.html'>Exam2</a><li><a href='Exam3.html'>Exam3</a></li></ul><li class='has-children'><a href='Final.html'>Final</a><ul class='dropdown'><li><a href='shooter youbots.html'>shooter youbots</a><li><a href='supervisor Robots.html'>supervisor Robots</a><li><a href='stand youbots.html'>stand youbots</a><li><a href='counter supervisor.html'>counter supervisor</a></li></ul><li><a href='Brython.html'>Brython</a></li>
+                      </ul>
+                </nav>
+              </div>
+              <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
+              </div>
+
+            </div>
+          </div>
+          
+        </header>
+    <div id="tipue_search_content">Tutorial1 << <a href='Tutorial1.html'>Previous</a> <a href='Tutorial3.html'>Next</a> >> Tutorial3<br /><h1>Tutorial2</h1>
+<p>在本教學中，我們將學習如何在環境中建立簡單的物件。第一步是建立一顆會與環境互動的球體。我們將探討與節點相關的多個概念：它們的意義、如何建立、如何關聯等。此外，我們還將了解如何設定物理屬性。</p>
+<p>將介紹幾種類型的節點。它們的詳細定義可以在參考手冊中找到。擁有節點圖表將有助於理解節點之間的繼承關係。</p>
+<hr/>
+<p><strong>The Solid Node</strong></p>
+<p>The Solid Node<br/>This subsection introduces the most important base node in Webots: the Solid node, from which many other nodes derive.</p>
+<p>A Solid node represents a rigid body, that is a body in which deformation can be neglected. The distance between any two given points of a rigid body remains constant in time regardless of external forces exerted on it. For example a table, a robot finger phalanx or a wheel are rigid bodies. Soft bodies and articulated objects are not rigid bodies. For example, a rope, a tire, a sponge or an articulated robot arm are not rigid bodies. However, an articulated entity can be broken into several rigid bodies.</p>
+<p>The physics engine of Webots is designed for simulating rigid bodies only. An important step, when designing a simulation, is to break up the various entities into separate rigid bodies.</p>
+<p>To define a rigid body, you will have to create a Solid node. Inside this node you will set up different sub-nodes corresponding to the characteristics of the rigid body. The following figure depicts a rigid body and its sub-nodes. The graphical representation of the Solid node is defined by the Shape nodes populating its children list. The collision bounds are defined in its boundingObject field. The graphical representation and the collision shape are often but not necessarily identical. Finally, the physics field defines if the object belongs to the dynamical or to the static environment. All these sub-nodes are optional, but the physics field needs the boundingObject to be defined.</p>
+<p>這一小節介紹了 Webots 中最重要的基礎節點：<strong>Solid 節點</strong>，許多其他節點都是從它衍生出來的。</p>
+<p>Solid 節點代表一個剛體，也就是一種在模擬中可以忽略變形的物體。剛體中任意兩點之間的距離在時間中是保持不變的，即使有外力施加在上面也是如此。例如：桌子、機器人的指節、或是輪子，這些都是剛體。而軟體（soft bodies）或具有關節的物體則不屬於剛體，比如繩子、輪胎、海綿，或是關節式的機器人手臂就不是剛體。不過，一個有關節的物體可以拆解成數個剛體來處理。</p>
+<p>Webots 的物理引擎專門用來<strong>模擬剛體</strong>。因此，在設計模擬時，一個重要的步驟就是把各個物件拆解成獨立的剛體。</p>
+<p>若要定義一個剛體，你需要建立一個 Solid 節點。在這個節點中，你將設定一些子節點來描述這個剛體的特性。下圖展示了一個剛體及其子節點的結構：</p>
+<p><strong>圖形外觀</strong>（Graphical representation） 是由放在 children 清單中的 Shape 節點 來定義的。</p>
+<p><strong>碰撞邊界</strong>（Collision bounds） 則是由 boundingObject 欄位來設定。</p>
+<p>通常圖形外觀與碰撞形狀是一樣的，但不一定非得相同。</p>
+<p>最後，physics 欄位會決定這個物件是屬於<strong>動態物件</strong>還是<strong>靜態環境</strong>的一部分。</p>
+<p>所有這些子節點都是可選的，但若要使用 physics 欄位，<strong>就必須定義</strong><span> </span>boundingObject。</p>
+<p><img alt="" height="245" src="https://mdecd2025.github.io/hw-41023114/images/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202025-04-16%20220900.png" width="300"/></p>
+<p>Solid node Solid 節點、剛體節點 Webots 中用來定義剛體的節點<br/>Rigid body 剛體 一種不會變形的物體<br/>Deformation 變形 通常是物體在受力後的形狀改變<br/>External force 外力 來自外部施加在物體上的力量<br/>Soft body 軟體 可以變形的物體<br/>Articulated object 關節式物體 有連接部位、可活動的物體<br/>Physics engine 物理引擎 模擬物理行為的程式模組<br/>Simulation 模擬 在電腦中模擬現實情境<br/>Sub-node 子節點 階層式結構中的下層節點<br/>Graphical representation 圖形表示 在 3D 視圖中可看到的外觀<br/>Collision bounds 碰撞邊界 用於物理計算的碰撞區域<br/>boundingObject 邊界物件欄位 定義碰撞邊界用的欄位<br/>children list 子節點清單 包含 Shape 等節點的集合<br/>Shape node 形狀節點 描述物體圖形的節點<br/>physics field 物理欄位 決定是否加入動力模擬<br/>dynamical/static environment 動態/靜態環境 是否會移動（物理互動）的物體</p>
+<p></p>
+<p>1.This subsection introduces...</p>
+<p>用來開始段落、介紹某主題。</p>
+<p>例句：This subsection introduces the most important base node in Webots.</p>
+<p>翻譯：這一小節介紹了 Webots 中最重要的基礎節點。</p>
+<p>2.A Solid node represents...</p>
+<p>主詞 + 動詞 + 補語 → 用來定義或說明某事物的功能。</p>
+<p>例句：A Solid node represents a rigid body.</p>
+<p>翻譯：Solid 節點代表一個剛體。</p>
+<p>3.can be broken into...</p>
+<p>被動語態 + break into，表示可被分成...</p>
+<p>例句：An articulated entity can be broken into several rigid bodies.</p>
+<p>翻譯：關節式物體可以被分成多個剛體。</p>
+<p>4.You will have to...</p>
+<p>未來式 + have to，表示「你必須」。</p>
+<p>例句：You will have to create a Solid node.</p>
+<p>翻譯：你將需要建立一個 Solid 節點。</p>
+<p>5....defined by...</p>
+<p>表示由...定義、構成。</p>
+<p>例句：The graphical representation is defined by the Shape nodes...</p>
+<p>翻譯：圖形表示是由 Shape 節點定義的。</p>
+<p>6....but not necessarily...</p>
+<p>表示「但不一定是…」</p>
+<p>例句：...are often but not necessarily identical.</p>
+<p>翻譯：通常是相同的，但不一定。</p>
+<p>7.All these sub-nodes are optional, but...</p>
+<p>對比句型，用來表達例外或限制。</p>
+<p>例句：All these sub-nodes are optional, but the physics field needs the boundingObject to be defined.</p>
+<p>翻譯：這些子節點都是可選的，但若要使用 physics 欄位，就必須定義 boundingObject。</p>
+<p></p>
+<p>主要在講解</p>
+<p>Solid 節點是 Webots 中最重要的基礎節點之一，代表一個剛體物件。它包含以下子節點：</p>
+<p>Shape：定義物件的外觀。</p>
+<p>boundingObject：定義物件的碰撞邊界。</p>
+<p>physics：定義物件的物理屬性。</p>
+<p>這些子節點是可選的，但如果要讓物件具有物理屬性，必須定義 boundingObject 和 physics。</p>
+<hr/>
+<p><strong>Create a Ball</strong></p>
+<p>We will now add a ball to the simulation. That ball will be modeled as a rigid body as shown in this figure. A Sphere node will be used to define the geometry of our ball.</p>
+<p>Hands-on #4: In the scene tree view, select the last node and press the Add button. In the dialog, open the Bases nodes section and select the Solid node. In the scene tree view, expand the Solid node and select its children field. Add a Shape node to it by using the Add button. Select the appearance field of the Shape node and use the Add button to add a PBRAppearance node.</p>
+<p>1.Add a Sphere node as the geometry field of the newly created Shape node.<br/>2.Expand the PBRAppearance node and change its metalness field to 0 and its roughness field to 1.<br/>3.Add another Sphere node to the boundingObject field of the Solid.<br/>4.Finally add a Physics node to the physics field of the Solid.<br/>5.By modifying the translation field of the Solid node, place the ball in front of the robot (at {0.2, 0, 0.2} for example).<br/>6.Save the simulation.<br/>7.The result is depicted in this figure.</p>
+<p>When the simulation is started, the ball hits the floor. You can move the ball by applying a force to it (ctrl + alt + left-click + drag). The contact points between the ball and the floor can be displayed as cyan lines by enabling the View / Optional Rendering / Show Contact Points menu item.</p>
+<p class="" data-end="142" data-start="74">我們現在要在模擬中加入一顆球。這顆球將會被建模為一個<strong data-end="106" data-start="100">剛體</strong>，如下圖所示。我們將使用<span> </span><code data-end="127" data-start="119">Sphere</code><span> </span>節點來定義這顆球的幾何形狀。</p>
+<p class="" data-end="388" data-start="144"><strong data-end="154" data-start="144">實作 #4：</strong><br data-end="157" data-start="154"/>在<span> </span><strong data-end="168" data-start="159">場景樹視圖</strong><span> </span>中，選取最後一個節點並按下<span> </span><strong data-end="189" data-start="183">新增</strong><span> </span>按鈕。在跳出的對話框中，展開<span> </span><strong data-end="220" data-start="205">Bases nodes</strong><span> </span>區段，然後選擇<span> </span><strong data-end="238" data-start="229">Solid</strong><span> </span>節點。<br data-end="245" data-start="242"/>在場景樹視圖中展開這個 Solid 節點，並選取它的<span> </span><code data-end="282" data-start="272">children</code><span> </span>欄位。接著，按下<span> </span><strong data-end="298" data-start="292">新增</strong><span> </span>按鈕加入一個<span> </span><strong data-end="315" data-start="306">Shape</strong><span> </span>節點。<br data-end="322" data-start="319"/>再選取剛加入的 Shape 節點的<span> </span><code data-end="352" data-start="340">appearance</code><span> </span>欄位，使用新增按鈕加入一個<span> </span><strong data-end="384" data-start="367">PBRAppearance</strong><span> </span>節點。</p>
+<p class="" data-end="618" data-start="390">在 Shape 節點的<span> </span><code data-end="412" data-start="402">geometry</code><span> </span>欄位加入一個<span> </span><strong data-end="430" data-start="420">Sphere</strong><span> </span>節點，作為球的幾何外觀。<br data-end="446" data-start="443"/>展開 PBRAppearance 節點，將<span> </span><code data-end="479" data-start="468">metalness</code><span> </span>欄位改為<span> </span><strong data-end="490" data-start="485">0</strong>，<code data-end="502" data-start="491">roughness</code><span> </span>欄位改為<span> </span><strong data-end="513" data-start="508">1</strong>。<br data-end="517" data-start="514"/>在 Solid 節點的<span> </span><code data-end="545" data-start="529">boundingObject</code><span> </span>欄位中再加入一個<span> </span><strong data-end="565" data-start="555">Sphere</strong><span> </span>節點，用來定義碰撞邊界。<br data-end="581" data-start="578"/>最後，在<span> </span><code data-end="595" data-start="586">physics</code><span> </span>欄位加入一個<span> </span><strong data-end="614" data-start="603">Physics</strong><span> </span>節點。</p>
+<p class="" data-end="697" data-start="620">透過修改 Solid 節點的<span> </span><code data-end="648" data-start="635">translation</code><span> </span>欄位，把球放在機器人前面的位置（例如設為<span> </span><code data-end="685" data-start="670">{0.2, 0, 0.2}</code>）。<br data-end="690" data-start="687"/>儲存這個模擬。</p>
+<p class="" data-end="756" data-start="699">這是你在 Webots 中建立的第一個剛體。</p>
+<p class="" data-end="905" data-start="758">當你開始模擬後，球會落到地板上。你可以透過施加力來移動這顆球（按住<span> </span><code data-end="811" data-start="792">Ctrl + Alt + 左鍵拖曳</code>）。<br data-end="816" data-start="813"/>若你想查看球與地面接觸的點，可以從功能表中點選：<strong data-end="891" data-start="840">View &gt; Optional Rendering &gt; Show Contact Points</strong>，就會以青綠色線條顯示出來。</p>
+<p class="" data-end="905" data-start="758"></p>
+<p class="" data-end="905" data-start="758">Ball 球體 模擬中新增的物件<br/>Rigid body 剛體 不會變形的物體，適合用於物理模擬<br/>Solid node Solid 節點 Webots 中用來定義剛體的節點<br/>Sphere node 球形節點 幾何形狀為球的節點<br/>Shape node 外觀節點 定義圖形外觀<br/>PBRAppearance node 實體外觀節點 用於設定金屬感、粗糙度等外觀屬性<br/>boundingObject 邊界物件欄位 用來定義物理碰撞用的區域<br/>Physics node 物理屬性節點 控制物體是否受重力、摩擦等影響<br/>translation 位移欄位 設定物體在空間中的位置<br/>metalness 金屬感 外觀參數，0 表示非金屬<br/>roughness 粗糙度 外觀參數，1 表示完全粗糙<br/>Apply a force 施加力量 移動物體的方式之一<br/>Contact point 接觸點 物體接觸地面時產生的物理點</p>
+<p class="" data-end="905" data-start="758"></p>
+<p>1.We will now add...</p>
+<p>表示即將執行的操作。</p>
+<p>例句：We will now add a ball to the simulation.</p>
+<p>翻譯：我們現在要在模擬中加入一顆球。</p>
+<p>2.That ball will be modeled as...</p>
+<p>被動語態 + as，用於描述物件如何被建模。</p>
+<p>例句：That ball will be modeled as a rigid body.</p>
+<p>翻譯：這顆球會被建模成一個剛體。</p>
+<p>3.Select the ... and press the Add button.</p>
+<p>指令句型，常見於操作教學中。</p>
+<p>例句：Select the last node and press the Add button.</p>
+<p>翻譯：選取最後一個節點並按下新增按鈕。</p>
+<p>4.Expand ... and change its ... field to ...</p>
+<p>表示進入某節點並修改其欄位。</p>
+<p>例句：Expand the PBRAppearance node and change its metalness field to 0.</p>
+<p>翻譯：展開 PBRAppearance 節點，將 metalness 欄位設為 0。</p>
+<p>5.The result is depicted in this figure.</p>
+<p>被動語態，用於說明結果已被圖示。</p>
+<p>例句：The result is depicted in this figure.</p>
+<p>翻譯：結果如下圖所示。</p>
+<p>6.You can move the ball by...</p>
+<p>by + V-ing，表示透過某動作達成某目的。</p>
+<p>例句：You can move the ball by applying a force to it.</p>
+<p>翻譯：你可以透過施加力量來移動這顆球。</p>
+<p>7.can be displayed by enabling...</p>
+<p>被動語態 + by V-ing，表示可以透過某操作來達成。</p>
+<p>例句：The contact points can be displayed by enabling the View menu...</p>
+<p>翻譯：接觸點可以透過啟用 View 選單來顯示。</p>
+<p></p>
+<p>主要在講解如何建立球體</p>
+<p><strong>1.新增 Solid 節點</strong><br/>在場景樹中選擇最後一個節點，點擊「新增」按鈕，選擇 Base nodes 中的 Solid 節點。</p>
+<p><strong>2.新增 Shape 節點</strong><br/>展開 Solid 節點，選擇 children 欄位，點擊「新增」按鈕，選擇 Shape 節點。</p>
+<p><strong>3.設定外觀</strong><br/>展開 Shape 節點，選擇 appearance 欄位，點擊「新增」按鈕，選擇 PBRAppearance 節點。將 metalness 設為 0，roughness 設為 1。</p>
+<p><strong>4.設定幾何形狀</strong><br/>在 Shape 節點中，選擇 geometry 欄位，點擊「新增」按鈕，選擇 Sphere 節點。將 radius 設為 0.05，subdivision 設為 2。</p>
+<p><strong>5.設定碰撞邊界</strong><br/>在 Solid 節點中，選擇 boundingObject 欄位，點擊「新增」按鈕，選擇 Sphere 節點。將 radius 設為 0.05，subdivision 設為 2。</p>
+<p><strong>6.設定物理屬性</strong><br/>在 Solid 節點中，選擇 physics 欄位，點擊「新增」按鈕，選擇 Physics 節點。</p>
+<p><strong>7.設定位置</strong><br/>在 Solid 節點中，選擇 translation 欄位，將其值設定為 {0.2, 0, 0.2}，將球體放置在機器人前方。</p>
+<p><strong>8.儲存模擬</strong><br/>完成上述步驟後，儲存模擬檔案。</p>
+<hr/>
+<p><strong>Geometries</strong></p>
+<p>To define the ball, we used the Sphere node in two different contexts: for the graphical representation (children) and to define the physical bounds (boundingObject). All Geometry nodes (such as the Sphere node) can be used in a graphical context. However, only a subset of them can be used in a physical context. The nodes chart diagram indicates which nodes are supported in each context.</p>
+<p>We are now going to reduce the size of the Sphere and increase its graphical quality by increasing the number of triangles used to represent it.</p>
+<p>Hands-on #5: For each Sphere node defining the ball, set its radius field to 0.05 and its subdivision field to 2. Refer to the Reference Manual to understand what the subdivision field stands for.</p>
+<p>為了定義這顆球，我們在兩種不同的情境中使用了 Sphere（球體）節點：<br/>一是在圖形呈現（children）中，另一個則是用來定義物理邊界（boundingObject）。<br/>所有的幾何節點（像是 Sphere）都可以用在圖形呈現的情境中。<br/>然而，只有其中一部分的幾何節點可以用在物理模擬的情境中。<br/>你可以參考節點圖（nodes chart diagram），來確認每個節點在哪些情境中是被支援的。</p>
+<p>接下來我們要縮小球的大小，並且提升圖形品質，方法是增加用來呈現球體的三角形數量。</p>
+<p><strong>實作#5</strong></p>
+<p>對每一個定義球體的 Sphere 節點，將：</p>
+<p>radius 欄位設為 0.05，</p>
+<p>subdivision 欄位設為 2。</p>
+<p>若想進一步了解 subdivision 欄位的用途，可以參考官方的 Reference Manual（參考手冊）。</p>
+<p></p>
+<p>Geometry 幾何形狀 通常用來定義 3D 物件的外觀<br/>Sphere node 球體節點 幾何節點之一，用來建立球形物件<br/>Graphical representation 圖形呈現 指物體在 3D 視窗中看到的樣子<br/>BoundingObject 邊界物件 物體的碰撞範圍，為物理模擬用<br/>Physical context 物理情境 用於碰撞、重量、力等模擬計算<br/>Subset 子集合、部分 指從一大類中選出的某幾個<br/>Reduce 減少、降低 常用於尺寸、數量等<br/>Subdivision 分割數、細分數 決定幾何圖形的精細度（三角形數）<br/>Radius 半徑 控制球體的大小<br/>Reference Manual 參考手冊 官方說明文件</p>
+<p></p>
+<p>1.We used the Sphere node in two different contexts.</p>
+<p>表示「我們在兩種不同情境下使用了 Sphere 節點」。</p>
+<p>in [情境] context 是很實用的寫法！</p>
+<p>例句翻譯：我們在兩種不同的情境中使用了 Sphere 節點。</p>
+<p>2.All Geometry nodes can be used in a graphical context.</p>
+<p>can be used：被動語態，表示「可以被使用」。</p>
+<p>例句翻譯：所有幾何節點都可以用在圖形呈現中。</p>
+<p>3.Only a subset of them can be used in a physical context.</p>
+<p>only a subset of：只有其中的一部分。</p>
+<p>例句翻譯：它們當中只有一部分可以用在物理情境中。</p>
+<p>4.We are now going to reduce the size of the Sphere.</p>
+<p>be going to + V：表示未來打算做某事。</p>
+<p>例句翻譯：我們現在要來縮小球體的大小。</p>
+<p>5.Increase its graphical quality by increasing the number of triangles.</p>
+<p>by V-ing：藉由做某事來達成目的。</p>
+<p>例句翻譯：透過增加三角形數量來提升圖形品質。</p>
+<p>6.Set its radius field to 0.05 and its subdivision field to 2.</p>
+<p>指令句常用語法，常見於操作說明中。</p>
+<p>例句翻譯：將半徑欄位設為 0.05、細分欄位設為 2。</p>
+<p></p>
+<hr/>
+<p><strong>DEF-USE Mechanism</strong></p>
+<p>The DEF-USE mechanism allows to define a node in one place and to reuse that definition elsewhere in the scene tree. This is useful to avoid the duplication of identical nodes in world files. Moreover, it also allows users to modify several objects at the same time. Here is how it works: first a node is labeled with a DEF string. Then copies of this node can be reused elsewhere with the USE keyword. Only the fields of the DEF node can be edited, the fields of the USE inherit from the DEF node and cannot be changed. This mechanism is dependent on the order of the nodes in the world file. A DEF node should be defined before any corresponding USE node.</p>
+<p>The two Sphere definitions that we have used earlier to define the ball, are redundant. We will now merge these two Spheres into only once using the DEF-USE mechanism.</p>
+<p>Hands-on #6: Select the first Sphere node (the child of the Shape) in the scene tree view. The field editor of the scene tree view allows you to enter the DEF string.</p>
+<p>Enter BALL_GEOMETRY in this field.<br/>Select the boundingObject field (containing the second Sphere node), and empty it by right clicking the field in the scene tree and choosing the Delete entry in the context menu that pops up.<br/>Then, select the boundingObject field and click on the Add button, and select the USE / BALL_GEOMETRY in the dialog box.<br/>The result is shown in this figure.<br/>Now, changing the radius field of the first Sphere node also modifies its boundingObject.</p>
+<p>For convenience, the boundingObject field also accepts the Shape node (rather than the Sphere node directly). It would be also possible to use the same DEF-USE mechanism at the Shape level as shown in this figure. For now the greatest benefit is being able to also use this Shape directly for graphical purposes. Later this mechanism will turn out to be very useful for some sensors.</p>
+<p>DEF-USE 機制可以讓你在場景樹中的某一處定義一個節點，然後在其他地方重複使用這個定義。<br/>這個機制的好處是可以避免在 world 檔中重複建立相同的節點，而且也能同時修改多個使用相同定義的物件。</p>
+<p>它的運作方式如下：</p>
+<p>1.先使用 DEF 關鍵字替一個節點取一個名稱。</p>
+<p>2.接著，在其他位置可以使用 USE 關鍵字來引用這個節點。</p>
+<p>3.<strong>只有被 DEF 定義的節點的欄位可以被修改</strong>，USE 的節點會繼承 DEF 的設定，不能獨立編輯。</p>
+<p>4.這個機制依賴 world 檔中的節點順序：必須先定義 DEF 節點，才能在後面使用對應的 USE 節點。</p>
+<p>我們之前為球體使用了兩個 Sphere 定義，這是重複的。<br/>現在我們要用 DEF-USE 機制，合併成一個 Sphere 節點來重複使用。</p>
+<p>實作#6</p>
+<ol data-end="739" data-start="507">
+<li class="" data-end="548" data-start="507">
+<p class="" data-end="548" data-start="510">在場景樹中，選取第一個<span> </span><code data-end="530" data-start="522">Sphere</code><span> </span>節點（<code data-end="541" data-start="534">Shape</code><span> </span>的子節點）。</p>
+</li>
+<li class="" data-end="593" data-start="549">
+<p class="" data-end="593" data-start="552">在欄位編輯器中輸入<span> </span><code data-end="567" data-start="562">DEF</code><span> </span>名稱 →<span> </span><strong data-end="592" data-start="573"><code data-end="590" data-start="575">BALL_GEOMETRY</code></strong>。</p>
+</li>
+<li class="" data-end="669" data-start="594">
+<p class="" data-end="642" data-start="597">選取<span> </span><code data-end="616" data-start="600">boundingObject</code><span> </span>欄位（裡面原本有第二個<span> </span><code data-end="637" data-start="629">Sphere</code><span> </span>節點）：</p>
+<p class="" data-end="669" data-start="648">   右鍵 → 選擇「Delete」來清空內容。</p>
+</li>
+<li class="" data-end="739" data-start="670">
+<p class="" data-end="739" data-start="673">再次選取<span> </span><code data-end="694" data-start="678">boundingObject</code><span> </span>欄位 → 按<span> </span><strong data-end="709" data-start="702">Add</strong><span> </span>→ 選擇<span> </span><strong>USE / BALL_GEOMETRY。</strong></p>
+</li>
+</ol>
+<p class="" data-end="838" data-start="741">如圖所示，現在只用一個 Sphere 就能同時定義圖形外觀和碰撞邊界。<br data-end="779" data-start="776"/><strong data-end="838" data-start="779">當你改變第一個 Sphere 的<span> </span><code data-end="806" data-start="798">radius</code><span> </span>時，它的<span> </span><code data-end="828" data-start="812">boundingObject</code><span> </span>也會跟著改變。</strong></p>
+<p class="" data-end="949" data-start="840">另外，為了方便起見，<code data-end="866" data-start="850">boundingObject</code><span> </span>欄位其實也可以接受整個<span> </span><code data-end="886" data-start="879">Shape</code><span> </span>節點（不只限於<span> </span><code data-end="903" data-start="895">Sphere</code>）。<br data-end="908" data-start="905"/>因此也可以將整個<span> </span><code data-end="924" data-start="917">Shape</code><span> </span>節點用<span> </span><code data-end="938" data-start="929">DEF-USE</code><span> </span>重複使用，如圖所示。</p>
+<p class="" data-end="1022" data-start="951">目前這樣做最大的好處是可以直接把這個<span> </span><code data-end="977" data-start="970">Shape</code><span> </span>用來做圖形呈現，<br data-end="989" data-start="986"/>以後我們在設定感測器（sensor）時，也會發現這個機制非常實用。</p>
+<p class="" data-end="1022" data-start="951"></p>
+<p class="" data-end="1022" data-start="951">DEF-USE mechanism 定義與重複使用的機制 Webots 中節點重用的重要工具<br/>Scene tree 場景樹 所有節點階層結構的視覺呈現<br/>Node 節點 Webots 中的基本建構單元<br/>Field editor 欄位編輯器 可編輯節點屬性的地方<br/>BoundingObject 碰撞邊界物件欄位 定義物理碰撞區域<br/>Graphical representation 圖形呈現 物體在 3D 視圖中所呈現的外觀<br/>Context menu 快速選單、右鍵選單 使用者右鍵點擊時出現的功能選單<br/>Convenience 便利性、方便性 在說明某功能使用上較為方便時常見用詞<br/>Inherit 繼承 指 USE 會繼承 DEF 的屬性設定</p>
+<p class="" data-end="1022" data-start="951"></p>
+<p>1.The DEF-USE mechanism allows [動詞片語]</p>
+<p>表示「這個機制可以讓你做…」</p>
+<p>The DEF-USE mechanism allows to define a node…</p>
+<p>DEF-USE 機制可以讓你定義節點…</p>
+<p>2.Only the fields of the DEF node can be edited.</p>
+<p>被動語態 + 限定詞 only，常見於規則說明。</p>
+<p>Only the fields of the DEF node can be edited.</p>
+<p>只有 DEF 節點的欄位可以被修改。</p>
+<p>3.The fields of the USE inherit from the DEF node.</p>
+<p>簡潔地表達繼承關係，用於物件導向、資料繼承等情境。</p>
+<p>The fields of the USE inherit from the DEF node.</p>
+<p>USE 的欄位會繼承 DEF 的設定。</p>
+<p>4.A DEF node should be defined before any corresponding USE node.</p>
+<p>should be + 過去分詞：表示應該要做某事的被動句型。</p>
+<p>A DEF node should be defined before any corresponding USE node.</p>
+<p>DEF 節點應該要在對應的 USE 節點之前定義好。</p>
+<p>5.Now, changing the radius field... also modifies its boundingObject.</p>
+<p>Now, + V-ing：現在做某事會產生什麼結果。</p>
+<p>Now, changing the radius field also modifies its boundingObject.</p>
+<p>現在，改變半徑也會同時改變碰撞邊界。</p>
+<p></p>
+<p>主要在講解DEF-USE機制</p>
+<p class="" data-end="1650" data-start="1623">為了減少節點重複，我們可以使用 DEF-USE 機制。</p>
+<ol data-end="1880" data-start="1652">
+<li class="" data-end="1760" data-start="1652">
+<p class="" data-end="1760" data-start="1655"><strong data-end="1668" data-start="1655">設定 DEF 標籤</strong><br data-end="1671" data-start="1668"/>在場景樹中，選擇<span> </span><code data-end="1690" data-start="1683">Shape</code><span> </span>節點，展開它，找到<span> </span><code data-end="1711" data-start="1701">geometry</code><span> </span>欄位，選擇<span> </span><code data-end="1726" data-start="1718">Sphere</code><span> </span>節點，將<span> </span><code data-end="1737" data-start="1732">DEF</code><span> </span>欄位設定為<span> </span><code data-end="1759" data-start="1744">BALL_GEOMETRY</code>。</p>
+</li>
+<li class="" data-end="1880" data-start="1762">
+<p class="" data-end="1880" data-start="1765"><strong data-end="1778" data-start="1765">使用 USE 標籤</strong><br data-end="1781" data-start="1778"/>在場景樹中，選擇<span> </span><code data-end="1800" data-start="1793">Solid</code><span> </span>節點，展開它，找到<span> </span><code data-end="1827" data-start="1811">boundingObject</code><span> </span>欄位，右鍵點擊，選擇「刪除」。然後，點擊「新增」按鈕，選擇<span> </span><code data-end="1879" data-start="1858">USE / BALL_GEOMETRY</code>。</p>
+</li>
+</ol>
+<p class="" data-end="1948" data-start="1882">這樣，當你修改<span> </span><code data-end="1905" data-start="1890">BALL_GEOMETRY</code><span> </span>的屬性時，所有使用<span> </span><code data-end="1937" data-start="1916">USE / BALL_GEOMETRY</code><span> </span>的節點都會同步更新。</p><br />Tutorial1 << <a href='Tutorial1.html'>Previous</a> <a href='Tutorial3.html'>Next</a> >> Tutorial3</div>
+        
+    <!-- footer -->
+      <div class="container">
+        <div class="row pt-3 mx-auto">
+            <p>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            </p>
+        </div>
+      </div>
+    <!-- for footer -->
+    
+        </div> <!-- for site wrap -->
+            <!-- <script src="../cmsimde/static/chimper/js/jquery-3.3.1.min.js"></script> -->
+            <script src="../cmsimde/static/chimper/js/jquery-migrate-3.0.1.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery-ui.js"></script>
+            <script src="../cmsimde/static/chimper/js/popper.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/bootstrap.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/owl.carousel.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.stellar.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.countdown.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.magnific-popup.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/bootstrap-datepicker.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/aos.js"></script>
+            <!--
+            <script src="../cmsimde/static/chimper/js/typed.js"></script>
+                    <script>
+                    var typed = new Typed('.typed-words', {
+                    strings: ["Web Apps"," WordPress"," Mobile Apps"],
+                    typeSpeed: 80,
+                    backSpeed: 80,
+                    backDelay: 4000,
+                    startDelay: 1000,
+                    loop: true,
+                    showCursor: true
+                    });
+                    </script>
+            -->
+            <script src="../cmsimde/static/chimper/js/main.js"></script>
+        
+<!-- 啟用 LaTeX equations 編輯 -->
+  <!-- <script>
+  MathJax = {
+    tex: {inlineMath: [['$', '$'], ['\(', '\)']]}
+  };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>-->
+    </body></html>
+        
